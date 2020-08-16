@@ -1,0 +1,6 @@
+[submodule "TBXTools/Resources/sql-tbx_validation_api_data"]
+	path = TBXTools/Resources/sql-tbx_validation_api_data
+	url = https://github.com/byutrg/sql-tbx_validation_api_data.git
+[submodule "TBXValidationDatabase/Resources/sql-tbx_validation_api_data"]
+	path = TBXValidationDatabase/Resources/sql-tbx_validation_api_data
+	url = https://github.com/byutrg/sql-tbx_validation_api_data.git
