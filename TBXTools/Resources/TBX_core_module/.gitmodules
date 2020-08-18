@@ -1,0 +1,3 @@
+[submodule "TBX_Core_RNG"]
+	path = TBX_Core_RNG
+	url = https://github.com/LTAC-Global/TBX_Core_RNG.git

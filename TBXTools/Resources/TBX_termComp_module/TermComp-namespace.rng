@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar 
+    xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" 
+    ns="urn:iso:std:iso:30042:termComp:ed-2">
+    
+    <define name="idlang.attributes">
+        <ref name="id.attributes"/>
+        <ref name="lang.attributes"/>
+    </define>
+    <define name="id.attributes">
+        <ref name="id.attribute.id"/>
+    </define>
+    <define name="id.attribute.id">
+        <optional>
+            <attribute name="id">
+                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                <data type="ID"/>
+            </attribute>
+        </optional>
+    </define>
+    <define name="lang.attributes">
+        <ref name="lang.attribute.xmllang"/>
+    </define>
+    <define name="lang.attribute.xmllang">
+        <optional>
+            <attribute name="xml:lang">
+                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Indicates
+                    the language of the element content. The allowed values are found in IETF RFC 4646 or
+                    its successor. This attribute is optional for elements that use this attribute class.
+                    For a description, see the information at the tbx element.</a:documentation>
+                <text/>
+            </attribute>
+        </optional>
+    </define>
+    
+        
+    <define name="termComp">
+        <element name="termComp">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <ref name="termComp.content"/>
+            <ref name="termComp.localattributes"/>
+        </element>
+    </define>
+    <define name="termComp.content">
+        <text/>
+    </define>
+    <define name="termComp.localattributes">
+        <ref name="idlang.attributes"/>
+    </define>
+    <define name="termCompGrp">
+        <element name="termCompGrp">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <ref name="termCompGrp.content"/>
+            <ref name="termCompGrp.localattributes"/>
+        </element>
+    </define>
+    <define name="termCompGrp.content">
+        <ref name="termComp"/>
+        <zeroOrMore>
+            <ref name="note"/>
+        </zeroOrMore>
+    </define>
+    <define name="termCompGrp.localattributes">
+        <ref name="id.attributes"/>
+    </define>
+    <define name="termCompSec">
+        <element name="termCompSec">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <ref name="termCompSec.content"/>
+            <ref name="termCompSec.localattributes"/>
+        </element>
+    </define>
+    <define name="termCompSec.content">
+        <zeroOrMore>
+            <ref name="note"/>
+        </zeroOrMore>
+        <oneOrMore>
+            <choice>
+                <ref name="termComp"/>
+                <ref name="termCompGrp"/>
+            </choice>
+        </oneOrMore>
+    </define>
+    <define name="termCompSec.localattributes">
+        <ref name="id.attributes"/>
+        <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Indicates
+                the type of the termCompSec, such as hyphenation. The value indicates on what basis
+                the term components were identified, such as by hyphenation parts or by
+                syllables.</a:documentation>
+            <choice>
+                <value>hyphenation</value>
+                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    >(Hyphenation) The termComp elements contain the parts of a term as it would be
+                    hyphenated, such as at the end of a line, according to a given set of
+                    rules.</a:documentation>
+                <value>lemma</value>
+                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    >(Lemma) The termComp elements contain the base form of the term or of the
+                    individual words that it comprises. A base form of a word or term, sometimes
+                    called a lemma, is the form that is used as the formal dictionary entry for the
+                    term. For nouns, the base form is frequently the nominative singular form (in
+                    languages that show variation by case). For adjectives it is the positive form of
+                    the adjective, as opposed to the comparative, and in some languages it is
+                    uninflected, whereas in others it is the masculine singular. For verbs, it is
+                    generally the infinitive.</a:documentation>
+                <value>morphologicalElement</value>
+                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    >(Morphological element) The termComp elements contain the individual morphemes
+                    that comprise the term. .</a:documentation>
+                <value>syllabification</value>
+                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    >(Syllabification) The termComp elements contain the individual syllables that
+                    comprise the term.</a:documentation>
+                <value>termElement</value>
+                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Term
+                    element) The termComp elements contain any other logically significant portion of
+                    the term.</a:documentation>
+            </choice>
+        </attribute>
+    </define>
+    
+    <define name="termCompSec.types">
+        <attribute name="type">
+            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Indicates
+                the type of the termCompSec, such as hyphenation. The value indicates on what basis the
+                term components were identified, such as by hyphenation parts or by
+                syllables.</documentation>
+            <choice>
+                <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">For an integrated schema for use in non-namespace environments (DCA style),
+                    replace &lt;text/&gt; with the allowed values of the "type" attribute.</documentation>
+                <text/>
+            </choice>
+        </attribute>
+        <ref name="dca.attributes"/>
+    </define>
+    
+    <define name="note">
+        <element name="note">
+            <text/>
+        </element>
+    </define>
+    <define name="dca.attributes">
+        <optional>
+            <attribute name="module">
+                <text/>
+            </attribute>
+        </optional>
+    </define>
+    
+    <start>
+        <ref name="termCompSec"/>
+    </start>
+</grammar>

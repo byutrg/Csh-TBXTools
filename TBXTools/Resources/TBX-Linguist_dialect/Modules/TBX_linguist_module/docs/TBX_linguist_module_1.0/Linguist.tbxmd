@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/LTAC-Global/TBX_module_description_xml/master/tbxmd.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<tbxmd module="linguist" ns="http://www.tbxinfo.net/ns/linguist"><!-- ns is only applicable to DCT style TBX -->
+    <header>
+        <title>Description of the Linguist data category module for TBX</title>
+        <description>The Linguist module is a simple data category module created for moderate need terminology data models.</description>
+    </header>
+    <datCatSet>
+        <!--Data-category constraint specifications are arranged in alphabetial order by the
+value of the name attribute. -->
+        <termNoteSpec name="grammaticalNumber" datcatId="http://www.datcatinfo.net/datcat/DC-251">
+            <contents datatype="picklist">
+                <value>singular</value>
+                <value>plural</value>
+                <value>dual</value>
+                <value>mass</value>
+                <value>otherNumber</value>
+            </contents>
+        </termNoteSpec>
+        <adminSpec name="reading" datcatId="UNKNOWN">
+            <levels>
+                <level>termSec</level>
+            </levels>
+            <contents datatype="string"/>
+        </adminSpec>
+        <adminNoteSpec name="readingNote" datcatId="UNKNOWN">
+            <levels>
+                <level>termSec</level>
+            </levels>
+            <contents datatype="noteText"/>
+        </adminNoteSpec>
+        <termNoteSpec name="register" datcatId="http://www.datcatinfo.net/datcat/DC-423">
+            <contents datatype='picklist'>
+                <value>colloquialRegister</value>
+                <value>neutralRegister</value>
+                <value>technicalRegister</value>
+                <value>in-houseRegister</value>
+                <value>bench-levelRegister</value>
+                <value>slangRegister</value>
+                <value>vulgarRegister</value>
+            </contents>
+        </termNoteSpec>
+        <termNoteSpec name="transferComment" datcatId="http://www.datcatinfo.net/datcat/DC-520">
+            <contents datatype="string"/>
+        </termNoteSpec>
+    </datCatSet>
+</tbxmd>
