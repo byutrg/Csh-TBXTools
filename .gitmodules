@@ -28,3 +28,9 @@
 [submodule "TBX_termComp_module"]
 	path = TBXTools/Resources/TBX_termComp_module
 	url = https://github.com/LTAC-Global/TBX_termComp_module.git
+[submodule "sql-tbx_validation_api_data"]
+	branch = sqlite
+[submodule "TBXTools/Resources/sql-tbx-master-datcat-repo"]
+	path = TBXTools/Resources/sql-tbx-master-datcat-repo
+	url = https://github.com/byutrg/sql-tbx-master-datcat-repo.git
+	branch = sqlite
