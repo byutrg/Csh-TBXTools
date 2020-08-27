@@ -1,6 +1,7 @@
 [submodule "TBXTools/Resources/sql-tbx_validation_api_data"]
 	path = TBXTools/Resources/sql-tbx_validation_api_data
 	url = https://github.com/byutrg/sql-tbx_validation_api_data.git
+	branch = sqlite
 [submodule "TBX-Core_dialect"]
 	path = TBXTools/Resources/TBX-Core_dialect
 	url = https://github.com/LTAC-Global/TBX-Core_dialect.git
@@ -28,8 +29,6 @@
 [submodule "TBX_termComp_module"]
 	path = TBXTools/Resources/TBX_termComp_module
 	url = https://github.com/LTAC-Global/TBX_termComp_module.git
-[submodule "sql-tbx_validation_api_data"]
-	branch = sqlite
 [submodule "TBXTools/Resources/sql-tbx-master-datcat-repo"]
 	path = TBXTools/Resources/sql-tbx-master-datcat-repo
 	url = https://github.com/byutrg/sql-tbx-master-datcat-repo.git
