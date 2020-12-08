@@ -1,2 +1,6 @@
 /TBXTools/obj/
 /TBXTools/bin/
+/TBXTools.Test/obj/
+/TBXTools.Test/bin/
+.vs
+packages
