@@ -118,7 +118,106 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Basic Module Definition.pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\tbx_basic_module\basic module definition.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Basic.rng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX_basic_module\Basic.rng;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Basic.sch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX_basic_module\Basic.sch;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Basic.tbxmd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX_basic_module\Basic.tbxmd;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Core Module Description.pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\tbx_core_module\core module description.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Linguist Module Definition.pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\tbx_linguist_module\linguist module definition.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Linguist.rng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX_linguist_module\Linguist.rng;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Linguist.sch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX_linguist_module\Linguist.sch;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Linguist.tbxmd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX_linguist_module\Linguist.tbxmd;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Min Module Definition.pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\tbx_min_module\min module definition.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Min.rng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX_min_module\Min.rng;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Min.sch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX_min_module\Min.sch;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Min.tbxmd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX_min_module\Min.tbxmd;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TBX-Basic Definition.pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\tbx-basic_dialect\tbx-basic definition.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TBX-Basic.nvdl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX-Basic_dialect\DCT\TBX-Basic.nvdl;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TBX-Basic_DCA.sch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX-Basic_dialect\DCA\TBX-Basic_DCA.sch;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TBX-Basic_DCT.sch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX-Basic_dialect\DCT\TBX-Basic_DCT.sch;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TBX-Core Definition.pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\tbx-core_dialect\tbx-core definition.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TBX-Core.sch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX-Core_dialect\Schemas\TBX-Core.sch;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TBX-Linguist Definition.pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\tbx-linguist_dialect\tbx-linguist definition.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TBX-Linguist.nvdl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX-Linguist_dialect\DCT\TBX-Linguist.nvdl;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TBX-Linguist_DCA.sch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX-Linguist_dialect\DCA\TBX-Linguist_DCA.sch;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TBX-Linguist_DCT.sch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX-Linguist_dialect\DCT\TBX-Linguist_DCT.sch;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TBX-Min Definition.pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\tbx-min_dialect\tbx-min definition.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TBX-Min.nvdl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX-Min_dialect\DCT\TBX-Min.nvdl;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TBX-Min_DCA.sch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX-Min_dialect\DCA\TBX-Min_DCA.sch;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TBX-Min_DCT.sch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX-Min_dialect\DCT\TBX-Min_DCT.sch;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TBXcoreStructV03.rng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX_core_module\TBX_Core_RNG\TBXcoreStructV03.rng;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TBXcoreStructV03_TBX-Basic_integrated.rng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX-Basic_dialect\DCA\TBXcoreStructV03_TBX-Basic_integrated.rng;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TBXcoreStructV03_TBX-Core_integrated.rng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX-Core_dialect\Schemas\TBXcoreStructV03_TBX-Core_integrated.rng;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TBXcoreStructV03_TBX-Linguist_integrated.rng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX-Linguist_dialect\DCA\TBXcoreStructV03_TBX-Linguist_integrated.rng;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TBXcoreStructV03_TBX-Min_integrated.rng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX-Min_dialect\DCA\TBXcoreStructV03_TBX-Min_integrated.rng;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="tbx_validation_api" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\tbx_validation_api.db;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TermComp-namespace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TBX_termComp_module\TermComp-namespace.rng;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

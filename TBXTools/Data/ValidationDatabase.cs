@@ -76,6 +76,7 @@ namespace TBXTools.Data
         public Task<Dialect> GetDialectAsync(string name)
         {
             var dialect = _database.Table<Dialect>().Where(d => d.name.ToLower().Equals(name.ToLower())).FirstOrDefaultAsync().Result;
+            if (dialect == default(Dialect)) return null;
             return _database.GetWithChildrenAsync<Dialect>(dialect.id);
         }
 
@@ -102,7 +103,17 @@ namespace TBXTools.Data
 
                 // free unmanaged resources (unmanaged objects) and override finalizer
                 // set large fields to null
-                if (File.Exists(DatabasePath)) File.Delete(DatabasePath);
+                if (File.Exists(DatabasePath))
+                {
+                    try
+                    {
+                        File.Delete(DatabasePath);
+                    } catch (IOException)
+                    {
+                        disposedValue = false;
+                        return;
+                    }
+                }
                 disposedValue = true;
             }
         }

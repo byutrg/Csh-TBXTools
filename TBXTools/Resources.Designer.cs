@@ -63,10 +63,567 @@ namespace TBXTools {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] Basic_Module_Definition_pdf {
+            get {
+                object obj = ResourceManager.GetObject("Basic Module Definition.pdf", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;grammar xmlns=&quot;http://relaxng.org/ns/structure/1.0&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+        ///   xmlns:teix=&quot;http://www.tei-c.org/ns/Examples&quot;
+        ///   datatypeLibrary=&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;
+        ///   ns=&quot;http://www.tbxinfo.net/ns/basic&quot;&gt;
+        ///   
+        ///   &lt;!-- optional metaType attribute --&gt;
+        ///   &lt;define name=&quot;metaType&quot;&gt;
+        ///      &lt;optional&gt;
+        ///         &lt;attribute name=&quot;metaType&quot;&gt;
+        ///            &lt;choice&gt;
+        ///               &lt;value&gt;admin&lt;/value&gt;
+        ///               &lt;value&gt;adminN [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Basic_rng {
+            get {
+                return ResourceManager.GetString("Basic.rng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;schema xmlns=&quot;http://purl.oclc.org/dsdl/schematron&quot; queryBinding=&quot;xslt2&quot;
+        ///    xmlns:sqf=&quot;http://www.schematron-quickfix.com/validator/process&quot;&gt;
+        ///    &lt;ns uri=&quot;urn:iso:std:iso:30042:ed-2&quot; prefix=&quot;tbx&quot; /&gt;
+        ///    &lt;ns uri=&quot;http://www.tbxinfo.net/ns/basic&quot; prefix=&quot;basic&quot; /&gt;
+        ///    &lt;ns uri=&quot;http://www.w3.org/2001/XMLSchema&quot; prefix=&quot;xs&quot; /&gt;
+        ///    
+        ///    &lt;!-- Basic Module Rules --&gt;
+        ///    &lt;pattern id=&quot;module.basic.admin&quot;&gt;
+        ///        &lt;rule context=&quot;basic:projectSubset&quot;&gt;
+        ///            &lt;ass [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Basic_sch {
+            get {
+                return ResourceManager.GetString("Basic.sch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;?xml-model href=&quot;https://raw.githubusercontent.com/LTAC-Global/TBX_module_description_xml/master/tbxmd.rng&quot; type=&quot;application/xml&quot; schematypens=&quot;http://relaxng.org/ns/structure/1.0&quot;?&gt;
+        ///&lt;tbxmd module=&quot;basic&quot; ns=&quot;http://www.tbxinfo.net/ns/basic&quot;&gt;&lt;!-- ns is only applicable to DCT style TBX --&gt;
+        ///    &lt;header&gt;
+        ///        &lt;title&gt;Description of the Basic data category module for TBX&lt;/title&gt;
+        ///        &lt;description&gt;TBX-Basic is intended to be the primary dialect of terminology ex [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Basic_tbxmd {
+            get {
+                return ResourceManager.GetString("Basic.tbxmd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Core_Module_Description_pdf {
+            get {
+                object obj = ResourceManager.GetObject("Core Module Description.pdf", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Linguist_Module_Definition_pdf {
+            get {
+                object obj = ResourceManager.GetObject("Linguist Module Definition.pdf", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;grammar xmlns=&quot;http://relaxng.org/ns/structure/1.0&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+        ///   xmlns:teix=&quot;http://www.tei-c.org/ns/Examples&quot;
+        ///   datatypeLibrary=&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;
+        ///   ns=&quot;http://www.tbxinfo.net/ns/linguist&quot;&gt;
+        ///   
+        ///   &lt;!-- optional metaType attribute --&gt;
+        ///   &lt;define name=&quot;metaType&quot;&gt;
+        ///      &lt;optional&gt;
+        ///         &lt;attribute name=&quot;metaType&quot;&gt;
+        ///            &lt;choice&gt;
+        ///               &lt;value&gt;admin&lt;/value&gt;
+        ///               &lt;value&gt;adm [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Linguist_rng {
+            get {
+                return ResourceManager.GetString("Linguist.rng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;schema xmlns=&quot;http://purl.oclc.org/dsdl/schematron&quot; queryBinding=&quot;xslt2&quot;
+        ///    xmlns:sqf=&quot;http://www.schematron-quickfix.com/validator/process&quot;&gt;
+        ///    &lt;ns uri=&quot;urn:iso:std:iso:30042:ed-2&quot; prefix=&quot;tbx&quot; /&gt;
+        ///    &lt;ns uri=&quot;http://www.tbxinfo.net/ns/linguist&quot; prefix=&quot;ling&quot; /&gt;
+        ///    &lt;ns uri=&quot;http://www.w3.org/2001/XMLSchema&quot; prefix=&quot;xs&quot; /&gt;
+        ///    
+        ///    &lt;!-- Linguist Module Rules --&gt;
+        ///    &lt;pattern id=&quot;module.linguist.admin&quot;&gt;
+        ///        &lt;rule context=&quot;ling:reading&quot;&gt;
+        ///            &lt;as [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Linguist_sch {
+            get {
+                return ResourceManager.GetString("Linguist.sch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;?xml-model href=&quot;https://raw.githubusercontent.com/LTAC-Global/TBX_module_description_xml/master/tbxmd.rng&quot; type=&quot;application/xml&quot; schematypens=&quot;http://relaxng.org/ns/structure/1.0&quot;?&gt;
+        ///&lt;tbxmd module=&quot;linguist&quot; ns=&quot;http://www.tbxinfo.net/ns/linguist&quot;&gt;&lt;!-- ns is only applicable to DCT style TBX --&gt;
+        ///    &lt;header&gt;
+        ///        &lt;title&gt;Description of the Linguist data category module for TBX&lt;/title&gt;
+        ///        &lt;description&gt;The Linguist module is a simple data category module cre [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Linguist_tbxmd {
+            get {
+                return ResourceManager.GetString("Linguist.tbxmd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Min_Module_Definition_pdf {
+            get {
+                object obj = ResourceManager.GetObject("Min Module Definition.pdf", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;grammar xmlns=&quot;http://relaxng.org/ns/structure/1.0&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+        ///   xmlns:teix=&quot;http://www.tei-c.org/ns/Examples&quot;
+        ///   datatypeLibrary=&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;
+        ///   ns=&quot;http://www.tbxinfo.net/ns/min&quot;&gt;
+        ///   &lt;!-- optional metaType attribute --&gt;
+        ///   &lt;define name=&quot;metaType&quot;&gt;
+        ///      &lt;optional&gt;
+        ///         &lt;attribute name=&quot;metaType&quot;&gt;
+        ///            &lt;choice&gt;
+        ///               &lt;value&gt;admin&lt;/value&gt;
+        ///               &lt;value&gt;adminNote&lt;/va [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Min_rng {
+            get {
+                return ResourceManager.GetString("Min.rng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;schema xmlns=&quot;http://purl.oclc.org/dsdl/schematron&quot; queryBinding=&quot;xslt2&quot;
+        ///    xmlns:sqf=&quot;http://www.schematron-quickfix.com/validator/process&quot;&gt;
+        ///    &lt;ns uri=&quot;urn:iso:std:iso:30042:ed-2&quot; prefix=&quot;tbx&quot; /&gt;
+        ///    &lt;ns uri=&quot;http://www.tbxinfo.net/ns/min&quot; prefix=&quot;min&quot; /&gt;
+        ///    
+        ///    &lt;!-- Min Module Rules --&gt;
+        ///    &lt;pattern id=&quot;module.min.admin&quot;&gt;
+        ///        &lt;rule context=&quot;min:customerSubset&quot;&gt;
+        ///            &lt;assert test=&quot;parent::tbx:conceptEntry or parent::tbx:adminGrp/parent::conce [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Min_sch {
+            get {
+                return ResourceManager.GetString("Min.sch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;?xml-model href=&quot;https://raw.githubusercontent.com/LTAC-Global/TBX_module_description_xml/master/tbxmd.rng&quot; type=&quot;application/xml&quot; schematypens=&quot;http://relaxng.org/ns/structure/1.0&quot;?&gt;
+        ///&lt;tbxmd module=&quot;min&quot; ns=&quot;http://www.tbxinfo.net/ns/min&quot;&gt;&lt;!-- ns is only applicable to DCT style TBX --&gt;
+        ///    &lt;header&gt;
+        ///        &lt;title&gt;Description of the Min data category module for TBX&lt;/title&gt;
+        ///        &lt;description&gt;The Min module is a simple data category module created for minimal nee [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Min_tbxmd {
+            get {
+                return ResourceManager.GetString("Min.tbxmd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;schema xmlns=&quot;http://purl.oclc.org/dsdl/schematron&quot; queryBinding=&quot;xslt2&quot;
+        ///    xmlns:sqf=&quot;http://www.schematron-quickfix.com/validator/process&quot;&gt;
+        ///    &lt;ns uri=&quot;urn:iso:std:iso:30042:ed-2&quot; prefix=&quot;tbx&quot; /&gt;
+        ///    &lt;pattern id=&quot;coreEnforecement&quot;&gt;
+        ///        &lt;rule context=&quot;tbx:termNote&quot;&gt;
+        ///&lt;assert test=&quot;parent::tbx:termSec or parent::tbx:termNoteGrp/parent::tbx:termSec&quot;&gt;Any termNote is only allowed at the termSec level.&lt;/assert&gt;
+        ///        &lt;/rule&gt;
+        ///        &lt;rule context=&quot;tbx:*[@ty [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TBX_Basic_DCA_sch {
+            get {
+                return ResourceManager.GetString("TBX-Basic_DCA.sch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;schema xmlns=&quot;http://purl.oclc.org/dsdl/schematron&quot; queryBinding=&quot;xslt2&quot;
+        ///    xmlns:sqf=&quot;http://www.schematron-quickfix.com/validator/process&quot;&gt;
+        ///    &lt;ns uri=&quot;urn:iso:std:iso:30042:ed-2&quot; prefix=&quot;tbx&quot; /&gt;
+        ///    
+        ///    &lt;pattern id=&quot;coreEnforecement&quot;&gt;
+        ///        &lt;rule context=&quot;tbx:termNote&quot;&gt;
+        ///            &lt;assert test=&quot;parent::tbx:termSec or parent::tbx:termNoteGrp/parent::tbx:termSec&quot;&gt;Any termNote is only allowed at the termSec level.&lt;/assert&gt;
+        ///        &lt;/rule&gt;
+        ///        &lt;rule  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TBX_Basic_DCT_sch {
+            get {
+                return ResourceManager.GetString("TBX-Basic_DCT.sch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] TBX_Basic_Definition_pdf {
+            get {
+                object obj = ResourceManager.GetObject("TBX-Basic Definition.pdf", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;rules xmlns=&quot;http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0&quot;
+        ///    xmlns:a=&quot;http://relaxng.org/ns/compatibility/annotations/1.0&quot; startMode=&quot;core&quot;&gt;
+        ///    &lt;mode name=&quot;core&quot;&gt;
+        ///        &lt;namespace ns=&quot;urn:iso:std:iso:30042:ed-2&quot;&gt;
+        ///            &lt;validate schema=&quot;https://raw.githubusercontent.com/LTAC-Global/TBX_Core_RNG/master/TBXcoreStructV03.rng&quot; useMode=&quot;RNG&quot;/&gt;
+        ///            &lt;validate schema=&quot;https://raw.githubusercontent.com/LTAC-Global/TBX-Basic_dialect/master/DCT/TBX-Ba [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TBX_Basic_nvdl {
+            get {
+                return ResourceManager.GetString("TBX-Basic.nvdl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] TBX_Core_Definition_pdf {
+            get {
+                object obj = ResourceManager.GetObject("TBX-Core Definition.pdf", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;schema xmlns=&quot;http://purl.oclc.org/dsdl/schematron&quot; queryBinding=&quot;xslt2&quot;
+        ///    xmlns:sqf=&quot;http://www.schematron-quickfix.com/validator/process&quot;&gt;
+        ///    &lt;ns uri=&quot;urn:iso:std:iso:30042:ed-2&quot; prefix=&quot;tbx&quot; /&gt;
+        ///    
+        ///    &lt;pattern id=&quot;coreEnforecement&quot;&gt;
+        ///        &lt;rule context=&quot;tbx:termNote&quot;&gt;
+        ///            &lt;assert test=&quot;parent::tbx:termSec or parent::tbx:termNoteGrp/parent::tbx:termSec&quot;&gt;Any termNote is only allowed at the termSec level.&lt;/assert&gt;
+        ///        &lt;/rule&gt;
+        ///        &lt;rule  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TBX_Core_sch {
+            get {
+                return ResourceManager.GetString("TBX-Core.sch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;schema xmlns=&quot;http://purl.oclc.org/dsdl/schematron&quot; queryBinding=&quot;xslt2&quot;
+        ///    xmlns:sqf=&quot;http://www.schematron-quickfix.com/validator/process&quot;&gt;
+        ///    &lt;ns uri=&quot;urn:iso:std:iso:30042:ed-2&quot; prefix=&quot;tbx&quot; /&gt;
+        ///    &lt;pattern id=&quot;coreEnforecement&quot;&gt;
+        ///        &lt;rule context=&quot;tbx:termNote&quot;&gt;
+        ///&lt;assert test=&quot;parent::tbx:termSec or parent::tbx:termNoteGrp/parent::tbx:termSec&quot;&gt;Any termNote is only allowed at the termSec level.&lt;/assert&gt;
+        ///        &lt;/rule&gt;
+        ///        &lt;rule context=&quot;tbx:*[@ty [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TBX_Linguist_DCA_sch {
+            get {
+                return ResourceManager.GetString("TBX-Linguist_DCA.sch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;schema xmlns=&quot;http://purl.oclc.org/dsdl/schematron&quot; queryBinding=&quot;xslt2&quot;
+        ///    xmlns:sqf=&quot;http://www.schematron-quickfix.com/validator/process&quot;&gt;
+        ///    &lt;ns uri=&quot;urn:iso:std:iso:30042:ed-2&quot; prefix=&quot;tbx&quot; /&gt;
+        ///    
+        ///    &lt;pattern id=&quot;coreEnforecement&quot;&gt;
+        ///        &lt;rule context=&quot;tbx:termNote&quot;&gt;
+        ///            &lt;assert test=&quot;parent::tbx:termSec or parent::tbx:termNoteGrp/parent::tbx:termSec&quot;&gt;Any termNote is only allowed at the termSec level.&lt;/assert&gt;
+        ///        &lt;/rule&gt;
+        ///        &lt;rule  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TBX_Linguist_DCT_sch {
+            get {
+                return ResourceManager.GetString("TBX-Linguist_DCT.sch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] TBX_Linguist_Definition_pdf {
+            get {
+                object obj = ResourceManager.GetObject("TBX-Linguist Definition.pdf", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;rules xmlns=&quot;http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0&quot;
+        ///    xmlns:a=&quot;http://relaxng.org/ns/compatibility/annotations/1.0&quot; startMode=&quot;core&quot;&gt;
+        ///    &lt;mode name=&quot;core&quot;&gt;
+        ///        &lt;namespace ns=&quot;urn:iso:std:iso:30042:ed-2&quot;&gt;
+        ///            &lt;validate schema=&quot;https://raw.githubusercontent.com/LTAC-Global/TBX_Core_RNG/master/TBXcoreStructV03.rng&quot; useMode=&quot;RNG&quot;/&gt;
+        ///            &lt;validate schema=&quot;https://raw.githubusercontent.com/LTAC-Global/TBX-Linguist_dialect/master/DCT/TBX [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TBX_Linguist_nvdl {
+            get {
+                return ResourceManager.GetString("TBX-Linguist.nvdl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;schema xmlns=&quot;http://purl.oclc.org/dsdl/schematron&quot; queryBinding=&quot;xslt2&quot;
+        ///    xmlns:sqf=&quot;http://www.schematron-quickfix.com/validator/process&quot;&gt;
+        ///    &lt;ns uri=&quot;urn:iso:std:iso:30042:ed-2&quot; prefix=&quot;tbx&quot; /&gt;
+        ///    
+        ///    &lt;pattern id=&quot;coreEnforecement&quot;&gt;
+        ///        &lt;rule context=&quot;tbx:termNote&quot;&gt;
+        ///&lt;assert test=&quot;parent::tbx:termSec or parent::tbx:termNoteGrp/parent::tbx:termSec&quot;&gt;Any termNote is only allowed at the termSec level.&lt;/assert&gt;
+        ///        &lt;/rule&gt;
+        ///        &lt;rule context=&quot;tbx [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TBX_Min_DCA_sch {
+            get {
+                return ResourceManager.GetString("TBX-Min_DCA.sch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;schema xmlns=&quot;http://purl.oclc.org/dsdl/schematron&quot; queryBinding=&quot;xslt2&quot;
+        ///    xmlns:sqf=&quot;http://www.schematron-quickfix.com/validator/process&quot;&gt;
+        ///    &lt;ns uri=&quot;urn:iso:std:iso:30042:ed-2&quot; prefix=&quot;tbx&quot; /&gt;
+        ///    
+        ///    &lt;pattern id=&quot;coreEnforecement&quot;&gt;
+        ///        &lt;rule context=&quot;tbx:termNote&quot;&gt;
+        ///            &lt;assert test=&quot;parent::tbx:termSec or parent::tbx:termNoteGrp/parent::tbx:termSec&quot;&gt;Any termNote is only allowed at the termSec level.&lt;/assert&gt;
+        ///        &lt;/rule&gt;
+        ///        &lt;rule  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TBX_Min_DCT_sch {
+            get {
+                return ResourceManager.GetString("TBX-Min_DCT.sch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] TBX_Min_Definition_pdf {
+            get {
+                object obj = ResourceManager.GetObject("TBX-Min Definition.pdf", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;rules xmlns=&quot;http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0&quot;
+        ///    xmlns:a=&quot;http://relaxng.org/ns/compatibility/annotations/1.0&quot; startMode=&quot;core&quot;&gt;
+        ///    &lt;mode name=&quot;core&quot;&gt;
+        ///        &lt;namespace ns=&quot;urn:iso:std:iso:30042:ed-2&quot;&gt;
+        ///            &lt;validate schema=&quot;https://raw.githubusercontent.com/LTAC-Global/TBX_Core_RNG/master/TBXcoreStructV03.rng&quot; useMode=&quot;RNG&quot;/&gt;
+        ///            &lt;validate schema=&quot;https://raw.githubusercontent.com/LTAC-Global/TBX-Min_dialect/master/DCT/TBX-Min_ [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TBX_Min_nvdl {
+            get {
+                return ResourceManager.GetString("TBX-Min.nvdl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] tbx_validation_api {
             get {
                 object obj = ResourceManager.GetObject("tbx_validation_api", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;grammar xmlns=&quot;http://relaxng.org/ns/structure/1.0&quot;
+        ///   datatypeLibrary=&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot; ns=&quot;urn:iso:std:iso:30042:ed-2&quot;&gt;
+        ///   &lt;define name=&quot;entity.basicText&quot;&gt;
+        ///      &lt;zeroOrMore&gt;
+        ///         &lt;choice&gt;
+        ///            &lt;text/&gt;
+        ///            &lt;ref name=&quot;hi&quot;/&gt;
+        ///         &lt;/choice&gt;
+        ///      &lt;/zeroOrMore&gt;
+        ///   &lt;/define&gt;
+        ///   &lt;define name=&quot;entity.noteText&quot;&gt;
+        ///      &lt;zeroOrMore&gt;
+        ///         &lt;choice&gt;
+        ///            &lt;text/&gt;
+        ///            &lt;ref name=&quot;hi&quot;/&gt;
+        ///             [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TBXcoreStructV03_rng {
+            get {
+                return ResourceManager.GetString("TBXcoreStructV03.rng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;grammar xmlns=&quot;http://relaxng.org/ns/structure/1.0&quot;
+        ///   datatypeLibrary=&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot; ns=&quot;urn:iso:std:iso:30042:ed-2&quot;&gt;
+        ///   &lt;define name=&quot;entity.basicText&quot;&gt;
+        ///      &lt;zeroOrMore&gt;
+        ///         &lt;choice&gt;
+        ///            &lt;text/&gt;
+        ///            &lt;ref name=&quot;hi&quot;/&gt;
+        ///         &lt;/choice&gt;
+        ///      &lt;/zeroOrMore&gt;
+        ///   &lt;/define&gt;
+        ///   &lt;define name=&quot;entity.noteText&quot;&gt;
+        ///      &lt;zeroOrMore&gt;
+        ///         &lt;choice&gt;
+        ///            &lt;text/&gt;
+        ///            &lt;ref name=&quot;hi&quot;/&gt;
+        ///             [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TBXcoreStructV03_TBX_Basic_integrated_rng {
+            get {
+                return ResourceManager.GetString("TBXcoreStructV03_TBX-Basic_integrated.rng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;grammar xmlns=&quot;http://relaxng.org/ns/structure/1.0&quot;
+        ///   datatypeLibrary=&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot; ns=&quot;urn:iso:std:iso:30042:ed-2&quot;&gt;
+        ///   &lt;define name=&quot;entity.basicText&quot;&gt;
+        ///      &lt;zeroOrMore&gt;
+        ///         &lt;choice&gt;
+        ///            &lt;text/&gt;
+        ///            &lt;ref name=&quot;hi&quot;/&gt;
+        ///         &lt;/choice&gt;
+        ///      &lt;/zeroOrMore&gt;
+        ///   &lt;/define&gt;
+        ///   &lt;define name=&quot;entity.noteText&quot;&gt;
+        ///      &lt;zeroOrMore&gt;
+        ///         &lt;choice&gt;
+        ///            &lt;text/&gt;
+        ///            &lt;ref name=&quot;hi&quot;/&gt;
+        ///             [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TBXcoreStructV03_TBX_Core_integrated_rng {
+            get {
+                return ResourceManager.GetString("TBXcoreStructV03_TBX-Core_integrated.rng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;grammar xmlns=&quot;http://relaxng.org/ns/structure/1.0&quot;
+        ///   datatypeLibrary=&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot; ns=&quot;urn:iso:std:iso:30042:ed-2&quot;&gt;
+        ///   &lt;define name=&quot;entity.basicText&quot;&gt;
+        ///      &lt;zeroOrMore&gt;
+        ///         &lt;choice&gt;
+        ///            &lt;text/&gt;
+        ///            &lt;ref name=&quot;hi&quot;/&gt;
+        ///         &lt;/choice&gt;
+        ///      &lt;/zeroOrMore&gt;
+        ///   &lt;/define&gt;
+        ///   &lt;define name=&quot;entity.noteText&quot;&gt;
+        ///      &lt;zeroOrMore&gt;
+        ///         &lt;choice&gt;
+        ///            &lt;text/&gt;
+        ///            &lt;ref name=&quot;hi&quot;/&gt;
+        ///             [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TBXcoreStructV03_TBX_Linguist_integrated_rng {
+            get {
+                return ResourceManager.GetString("TBXcoreStructV03_TBX-Linguist_integrated.rng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;grammar xmlns=&quot;http://relaxng.org/ns/structure/1.0&quot;
+        ///   datatypeLibrary=&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot; ns=&quot;urn:iso:std:iso:30042:ed-2&quot;&gt;
+        ///   &lt;define name=&quot;entity.basicText&quot;&gt;
+        ///      &lt;zeroOrMore&gt;
+        ///         &lt;choice&gt;
+        ///            &lt;text/&gt;
+        ///            &lt;ref name=&quot;hi&quot;/&gt;
+        ///         &lt;/choice&gt;
+        ///      &lt;/zeroOrMore&gt;
+        ///   &lt;/define&gt;
+        ///   &lt;define name=&quot;entity.noteText&quot;&gt;
+        ///      &lt;zeroOrMore&gt;
+        ///         &lt;choice&gt;
+        ///            &lt;text/&gt;
+        ///            &lt;ref name=&quot;hi&quot;/&gt;
+        ///             [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TBXcoreStructV03_TBX_Min_integrated_rng {
+            get {
+                return ResourceManager.GetString("TBXcoreStructV03_TBX-Min_integrated.rng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;grammar 
+        ///    xmlns=&quot;http://relaxng.org/ns/structure/1.0&quot;
+        ///    xmlns:a=&quot;http://relaxng.org/ns/compatibility/annotations/1.0&quot;
+        ///    datatypeLibrary=&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot; 
+        ///    ns=&quot;urn:iso:std:iso:30042:termComp:ed-2&quot;&gt;
+        ///    
+        ///    &lt;define name=&quot;idlang.attributes&quot;&gt;
+        ///        &lt;ref name=&quot;id.attributes&quot;/&gt;
+        ///        &lt;ref name=&quot;lang.attributes&quot;/&gt;
+        ///    &lt;/define&gt;
+        ///    &lt;define name=&quot;id.attributes&quot;&gt;
+        ///        &lt;ref name=&quot;id.attribute.id&quot;/&gt;
+        ///    &lt;/define&gt;
+        ///    &lt;d [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TermComp_namespace {
+            get {
+                return ResourceManager.GetString("TermComp-namespace", resourceCulture);
             }
         }
     }

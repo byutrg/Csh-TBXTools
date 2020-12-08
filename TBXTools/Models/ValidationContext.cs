@@ -11,7 +11,7 @@ namespace TBXTools.Models
     {
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
-        [Unique]
+        [Unique, Collation("NOCASE")]
         public string name { get; set; }
         public string definition { get; set; }
         public string dca_rng { get; set; }
@@ -20,6 +20,19 @@ namespace TBXTools.Models
         public string dct_sch { get; set; }
         [ManyToMany(typeof(DialectModule))]
         public List<Module> modules { get; set; }
+
+        public override string ToString()
+        {
+            return 
+$@"Name: {name}
+    Definition: {definition}
+    DCA:
+        RNG: {dca_rng}
+        SCH: {dca_sch}
+    DCT:
+        NVDL: {dct_nvdl}
+        SCH: {dct_sch}";
+        }
     }
 
     [Table("modules")]
@@ -27,7 +40,7 @@ namespace TBXTools.Models
     {
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
-        [Unique]
+        [Unique, Collation("NOCASE")]
         public string name { get; set; }
         public string definition { get; set; }
         public string rng { get; set; }
@@ -36,6 +49,16 @@ namespace TBXTools.Models
 
         //[ManyToMany(typeof(DialectModule))] // we don't really need this.
         public List<Dialect> dialects { get; }
+
+        public override string ToString()
+        {
+            return 
+$@"Name: {name}
+    Definition: {definition}
+    RNG: {rng}
+    SCH: {sch}
+    SCH: {tbxmd}";
+        }
     }
 
     [Table("dialects_modules")]
