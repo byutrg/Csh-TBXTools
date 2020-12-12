@@ -47,6 +47,7 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                     outElement = HandleDate(currentElement);
                     break;
                 case "descrip":
+                    outElement = HandleDescrip(currentElement);
                     break;
                 case "descripGrp":
                     break;
