@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Xml;
 using System.Xml.Linq;
 using TBXTools.ConversionAPI.MTF.Handlers;
 
@@ -10,22 +11,23 @@ namespace TBXTools.ConversionAPI.MTF
 {
     public static class Convert
     {
-        public static void ToTBX() { }
+        public static void Convert_MTF_TBX() { }
 
-        public static void ToMTF(FileStream tbxFile)
+        public static bool Convert_TBX_MTF(Stream tbxFile, Stream outputFile)
         {
-            XDocument tbxDoc = XDocument.Load(tbxFile);
-            IEnumerable<XElement> conceptEntries = tbxDoc.Descendants(TBXTools.ValidationAPI.Namespace + "conceptEntry");
-            int conceptEntriesCount = conceptEntries.Count();
-            XDocument mtfDoc = new XDocument(new XElement("mtf"));
-            for (int i = 0; i < conceptEntriesCount; i++)
+            try
             {
-                XElement conceptEntry = conceptEntries.ElementAt(i);
-                XElement conceptGrp = new XElement("conceptGrp", new XElement("concept", i));
-
-
-                    
+                XDocument tbxDoc = XDocument.Load(tbxFile);
+                XElement body = tbxDoc.Descendants(TBXTools.ValidationAPI.Namespace + "body").First();
+                XDocument mtfDoc = new XDocument(TBXHandlers.HandleBody(body));
+                mtfDoc.Save(outputFile);
             }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         

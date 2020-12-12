@@ -117,10 +117,123 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="conceptEntry" xml:space="preserve">
+    <value>&lt;conceptGrp&gt;
+        &lt;concept&gt;1&lt;/concept&gt;
+        &lt;transacGrp&gt;
+            &lt;transac type="origination"&gt;mwetzel&lt;/transac&gt;
+            &lt;date&gt;2009-05-05T00:00:00&lt;/date&gt;
+        &lt;/transacGrp&gt;
+        &lt;transacGrp&gt;
+            &lt;transac type="modification"&gt;mwetzel&lt;/transac&gt;
+            &lt;date&gt;2009-05-05T00:00:00&lt;/date&gt;
+        &lt;/transacGrp&gt;
+        &lt;languageGrp&gt;
+            &lt;language type="German" lang="DE" /&gt;
+            &lt;termGrp&gt;
+                &lt;term&gt;Schnittstelle&lt;/term&gt;
+                &lt;transacGrp&gt;
+                    &lt;transac type="origination"&gt;poweruser&lt;/transac&gt;
+                    &lt;date&gt;2006-12-08T00:00:00&lt;/date&gt;
+                &lt;/transacGrp&gt;
+                &lt;transacGrp&gt;
+                    &lt;transac type="modification"&gt;poweruser&lt;/transac&gt;
+                    &lt;date&gt;2006-12-08T00:00:00&lt;/date&gt;
+                &lt;/transacGrp&gt;
+            &lt;/termGrp&gt;
+        &lt;/languageGrp&gt;
+        &lt;languageGrp&gt;
+            &lt;language type="English" lang="EN" /&gt;
+            &lt;termGrp&gt;
+                &lt;term&gt;interface&lt;/term&gt;
+                &lt;transacGrp&gt;
+                    &lt;transac type="origination"&gt;poweruser&lt;/transac&gt;
+                    &lt;date&gt;2006-12-08T00:00:00&lt;/date&gt;
+                &lt;/transacGrp&gt;
+                &lt;transacGrp&gt;
+                    &lt;transac type="modification"&gt;poweruser&lt;/transac&gt;
+                    &lt;date&gt;2006-12-08T00:00:00&lt;/date&gt;
+                &lt;/transacGrp&gt;
+                &lt;descripGrp&gt;
+                    &lt;descrip type="Part of Speech"&gt;noun&lt;/descrip&gt;
+                &lt;/descripGrp&gt;
+            &lt;/termGrp&gt;
+        &lt;/languageGrp&gt;
+        &lt;languageGrp&gt;
+            &lt;language type="French" lang="FR" /&gt;
+            &lt;termGrp&gt;
+                &lt;term&gt;interface&lt;/term&gt;
+                &lt;transacGrp&gt;
+                    &lt;transac type="origination"&gt;poweruser&lt;/transac&gt;
+                    &lt;date&gt;2006-12-08T00:00:00&lt;/date&gt;
+                &lt;/transacGrp&gt;
+                &lt;transacGrp&gt;
+                    &lt;transac type="modification"&gt;poweruser&lt;/transac&gt;
+                    &lt;date&gt;2006-12-08T00:00:00&lt;/date&gt;
+                &lt;/transacGrp&gt;
+            &lt;/termGrp&gt;
+        &lt;/languageGrp&gt;
+    &lt;/conceptGrp&gt;</value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>&lt;date&gt;2009-05-05T00:00:00&lt;/date&gt;</value>
+  </data>
+  <data name="langSec" xml:space="preserve">
+    <value>&lt;languageGrp&gt;
+            &lt;language type="English" lang="EN" /&gt;
+            &lt;termGrp&gt;
+                &lt;term&gt;interface&lt;/term&gt;
+                &lt;transacGrp&gt;
+                    &lt;transac type="origination"&gt;poweruser&lt;/transac&gt;
+                    &lt;date&gt;2006-12-08T00:00:00&lt;/date&gt;
+                &lt;/transacGrp&gt;
+                &lt;transacGrp&gt;
+                    &lt;transac type="modification"&gt;poweruser&lt;/transac&gt;
+                    &lt;date&gt;2006-12-08T00:00:00&lt;/date&gt;
+                &lt;/transacGrp&gt;
+                &lt;descripGrp&gt;
+                    &lt;descrip type="Part of Speech"&gt;noun&lt;/descrip&gt;
+                &lt;/descripGrp&gt;
+            &lt;/termGrp&gt;
+        &lt;/languageGrp&gt;</value>
+  </data>
+  <data name="term" xml:space="preserve">
+    <value>&lt;term&gt;méthodologie prouvée&lt;/term&gt;</value>
+  </data>
+  <data name="termNote" xml:space="preserve">
+    <value>
+&lt;descrip type="Part of Speech"&gt;noun&lt;/descrip&gt;</value>
+  </data>
+  <data name="termNote_toGroupify" xml:space="preserve">
+    <value>&lt;termNoteGrp&gt;
+                    &lt;termNote type="partOfSpeech"&gt;noun&lt;/termNote&gt;
+                &lt;/termNoteGrp&gt;</value>
+  </data>
+  <data name="termSec" xml:space="preserve">
+    <value>&lt;termGrp&gt;
+                &lt;term&gt;interface&lt;/term&gt;
+                &lt;transacGrp&gt;
+                    &lt;transac type="origination"&gt;poweruser&lt;/transac&gt;
+                    &lt;date&gt;2006-12-08T00:00:00&lt;/date&gt;
+                &lt;/transacGrp&gt;
+                &lt;transacGrp&gt;
+                    &lt;transac type="modification"&gt;poweruser&lt;/transac&gt;
+                    &lt;date&gt;2006-12-08T00:00:00&lt;/date&gt;
+                &lt;/transacGrp&gt;
+                &lt;descripGrp&gt;
+                    &lt;descrip type="Part of Speech"&gt;noun&lt;/descrip&gt;
+                &lt;/descripGrp&gt;
+            &lt;/termGrp&gt;</value>
+  </data>
   <data name="transacGrp" xml:space="preserve">
     <value>&lt;transacGrp&gt;
             &lt;transac type="origination"&gt;tester&lt;/transac&gt;
             &lt;date&gt;2009-05-05T00:00:00&lt;/date&gt;
         &lt;/transacGrp&gt;</value>
+  </data>
+  <data name="transac_toGroupify" xml:space="preserve">
+    <value>&lt;transacGrp&gt;
+					&lt;transac type="transactionType"&gt;origination&lt;/transac&gt;
+			&lt;/transacGrp&gt;</value>
   </data>
 </root>

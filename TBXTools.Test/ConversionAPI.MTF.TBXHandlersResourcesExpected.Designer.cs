@@ -61,6 +61,120 @@ namespace TBXTools.Test {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;conceptGrp&gt;
+        ///        &lt;concept&gt;1&lt;/concept&gt;
+        ///        &lt;transacGrp&gt;
+        ///            &lt;transac type=&quot;origination&quot;&gt;mwetzel&lt;/transac&gt;
+        ///            &lt;date&gt;2009-05-05T00:00:00&lt;/date&gt;
+        ///        &lt;/transacGrp&gt;
+        ///        &lt;transacGrp&gt;
+        ///            &lt;transac type=&quot;modification&quot;&gt;mwetzel&lt;/transac&gt;
+        ///            &lt;date&gt;2009-05-05T00:00:00&lt;/date&gt;
+        ///        &lt;/transacGrp&gt;
+        ///        &lt;languageGrp&gt;
+        ///            &lt;language type=&quot;German&quot; lang=&quot;DE&quot; /&gt;
+        ///            &lt;termGrp&gt;
+        ///                &lt;term&gt;Schnittstelle&lt;/term&gt;
+        ///                &lt;transacGrp [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string conceptEntry {
+            get {
+                return ResourceManager.GetString("conceptEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;date&gt;2009-05-05T00:00:00&lt;/date&gt;.
+        /// </summary>
+        internal static string date {
+            get {
+                return ResourceManager.GetString("date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;languageGrp&gt;
+        ///            &lt;language type=&quot;English&quot; lang=&quot;EN&quot; /&gt;
+        ///            &lt;termGrp&gt;
+        ///                &lt;term&gt;interface&lt;/term&gt;
+        ///                &lt;transacGrp&gt;
+        ///                    &lt;transac type=&quot;origination&quot;&gt;poweruser&lt;/transac&gt;
+        ///                    &lt;date&gt;2006-12-08T00:00:00&lt;/date&gt;
+        ///                &lt;/transacGrp&gt;
+        ///                &lt;transacGrp&gt;
+        ///                    &lt;transac type=&quot;modification&quot;&gt;poweruser&lt;/transac&gt;
+        ///                    &lt;date&gt;2006-12-08T00:00:00&lt;/date&gt;
+        ///                &lt;/transacGrp&gt;
+        ///               [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string langSec {
+            get {
+                return ResourceManager.GetString("langSec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;term&gt;méthodologie prouvée&lt;/term&gt;.
+        /// </summary>
+        internal static string term {
+            get {
+                return ResourceManager.GetString("term", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///&lt;descrip type=&quot;Part of Speech&quot;&gt;noun&lt;/descrip&gt;.
+        /// </summary>
+        internal static string termNote {
+            get {
+                return ResourceManager.GetString("termNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;termNoteGrp&gt;
+        ///                    &lt;termNote type=&quot;partOfSpeech&quot;&gt;noun&lt;/termNote&gt;
+        ///                &lt;/termNoteGrp&gt;.
+        /// </summary>
+        internal static string termNote_toGroupify {
+            get {
+                return ResourceManager.GetString("termNote_toGroupify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;termGrp&gt;
+        ///                &lt;term&gt;interface&lt;/term&gt;
+        ///                &lt;transacGrp&gt;
+        ///                    &lt;transac type=&quot;origination&quot;&gt;poweruser&lt;/transac&gt;
+        ///                    &lt;date&gt;2006-12-08T00:00:00&lt;/date&gt;
+        ///                &lt;/transacGrp&gt;
+        ///                &lt;transacGrp&gt;
+        ///                    &lt;transac type=&quot;modification&quot;&gt;poweruser&lt;/transac&gt;
+        ///                    &lt;date&gt;2006-12-08T00:00:00&lt;/date&gt;
+        ///                &lt;/transacGrp&gt;
+        ///                &lt;descripGrp&gt;
+        ///                    &lt;descrip type=&quot;Part of Speech&quot;&gt;noun&lt;/descr [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string termSec {
+            get {
+                return ResourceManager.GetString("termSec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;transacGrp&gt;
+        ///					&lt;transac type=&quot;transactionType&quot;&gt;origination&lt;/transac&gt;
+        ///			&lt;/transacGrp&gt;.
+        /// </summary>
+        internal static string transac_toGroupify {
+            get {
+                return ResourceManager.GetString("transac_toGroupify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;transacGrp&gt;
         ///            &lt;transac type=&quot;origination&quot;&gt;tester&lt;/transac&gt;
         ///            &lt;date&gt;2009-05-05T00:00:00&lt;/date&gt;

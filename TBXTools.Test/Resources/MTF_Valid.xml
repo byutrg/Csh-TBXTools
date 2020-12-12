@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mtf>
+    <conceptGrp>
+        <concept>1</concept>
+        <transacGrp>
+            <transac type="origination">mwetzel</transac>
+            <date>2009-05-05T00:00:00</date>
+        </transacGrp>
+        <transacGrp>
+            <transac type="modification">mwetzel</transac>
+            <date>2009-05-05T00:00:00</date>
+        </transacGrp>
+        <languageGrp>
+            <language type="German" lang="DE" />
+            <termGrp>
+                <term>Schnittstelle</term>
+                <transacGrp>
+                    <transac type="origination">poweruser</transac>
+                    <date>2006-12-08T00:00:00</date>
+                </transacGrp>
+                <transacGrp>
+                    <transac type="modification">poweruser</transac>
+                    <date>2006-12-08T00:00:00</date>
+                </transacGrp>
+            </termGrp>
+        </languageGrp>
+        <languageGrp>
+            <language type="English" lang="EN" />
+            <termGrp>
+                <term>interface</term>
+                <transacGrp>
+                    <transac type="origination">poweruser</transac>
+                    <date>2006-12-08T00:00:00</date>
+                </transacGrp>
+                <transacGrp>
+                    <transac type="modification">poweruser</transac>
+                    <date>2006-12-08T00:00:00</date>
+                </transacGrp>
+                <descripGrp>
+                    <descrip type="Part of Speech">noun</descrip>
+                </descripGrp>
+            </termGrp>
+        </languageGrp>
+        <languageGrp>
+            <language type="French" lang="FR" />
+            <termGrp>
+                <term>interface</term>
+                <transacGrp>
+                    <transac type="origination">poweruser</transac>
+                    <date>2006-12-08T00:00:00</date>
+                </transacGrp>
+                <transacGrp>
+                    <transac type="modification">poweruser</transac>
+                    <date>2006-12-08T00:00:00</date>
+                </transacGrp>
+            </termGrp>
+        </languageGrp>
+    </conceptGrp>
+    <conceptGrp>
+        <concept>2</concept>
+        <transacGrp>
+            <transac type="origination">mwetzel</transac>
+            <date>2009-05-05T00:00:00</date>
+        </transacGrp>
+        <transacGrp>
+            <transac type="modification">mwetzel</transac>
+            <date>2009-05-05T00:00:00</date>
+        </transacGrp>
+        <languageGrp>
+            <language type="German" lang="DE" />
+            <termGrp>
+                <term>bewährte Methodik</term>
+                <transacGrp>
+                    <transac type="origination">poweruser</transac>
+                    <date>2006-12-08T00:00:00</date>
+                </transacGrp>
+                <transacGrp>
+                    <transac type="modification">Administrator</transac>
+                    <date>2009-04-28T00:00:00</date>
+                </transacGrp>
+            </termGrp>
+        </languageGrp>
+        <languageGrp>
+            <language type="English" lang="EN" />
+            <termGrp>
+                <term>proven methodology</term>
+                <transacGrp>
+                    <transac type="origination">poweruser</transac>
+                    <date>2006-12-08T00:00:00</date>
+                </transacGrp>
+                <transacGrp>
+                    <transac type="modification">poweruser</transac>
+                    <date>2006-12-08T00:00:00</date>
+                </transacGrp>
+            </termGrp>
+        </languageGrp>
+        <languageGrp>
+            <language type="French" lang="FR" />
+            <termGrp>
+                <term>méthodologie prouvée</term>
+                <transacGrp>
+                    <transac type="origination">poweruser</transac>
+                    <date>2006-12-08T00:00:00</date>
+                </transacGrp>
+                <transacGrp>
+                    <transac type="modification">poweruser</transac>
+                    <date>2006-12-08T00:00:00</date>
+                </transacGrp>
+            </termGrp>
+        </languageGrp>
+    </conceptGrp>
+    <conceptGrp>
+        <concept>3</concept>
+        <transacGrp>
+            <transac type="origination">mwetzel</transac>
+            <date>2009-05-05T00:00:00</date>
+        </transacGrp>
+        <transacGrp>
+            <transac type="modification">mwetzel</transac>
+            <date>2009-05-05T00:00:00</date>
+        </transacGrp>
+        <languageGrp>
+            <language type="English" lang="EN" />
+            <termGrp>
+                <term>Automated Processes, Inc.</term>
+                <transacGrp>
+                    <transac type="origination">Administrator</transac>
+                    <date>2009-04-28T00:00:00</date>
+                </transacGrp>
+                <transacGrp>
+                    <transac type="modification">Administrator</transac>
+                    <date>2009-04-28T00:00:00</date>
+                </transacGrp>
+            </termGrp>
+            <termGrp>
+                <term>API Audio Products</term>
+                <transacGrp>
+                    <transac type="origination">Administrator</transac>
+                    <date>2009-04-28T00:00:00</date>
+                </transacGrp>
+                <transacGrp>
+                    <transac type="modification">Administrator</transac>
+                    <date>2009-04-28T00:00:00</date>
+                </transacGrp>
+            </termGrp>
+            <termGrp>
+                <term>API</term>
+                <transacGrp>
+                    <transac type="origination">Administrator</transac>
+                    <date>2009-04-28T00:00:00</date>
+                </transacGrp>
+                <transacGrp>
+                    <transac type="modification">Administrator</transac>
+                    <date>2009-04-28T00:00:00</date>
+                </transacGrp>
+            </termGrp>
+        </languageGrp>
+    </conceptGrp>
+</mtf>
