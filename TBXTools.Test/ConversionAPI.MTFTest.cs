@@ -90,10 +90,26 @@ namespace TBXTools.Test
         }
 
         [TestMethod]
+        public void HandleDescrip_ValidInput_Test()
+        {
+            (XElement, string) testingConstants = GetResourceSourceAndExpected("descrip");
+            XElement outElement = TBXHandlers.HandleDescrip(testingConstants.Item1);
+            Assert.IsTrue(SerializedElementMatchesString(outElement, testingConstants.Item2));
+        }
+
+        [TestMethod]
         public void HandleLangSec_ValidInput_Test()
         {
             (XElement, string) testingConstants = GetResourceSourceAndExpected("langSec");
             XElement outElement = TBXHandlers.HandleLangSec(testingConstants.Item1);
+            Assert.IsTrue(SerializedElementMatchesString(outElement, testingConstants.Item2));
+        }
+
+        [TestMethod]
+        public void HandleNote_ValidInput_Test()
+        {
+            (XElement, string) testingConstants = GetResourceSourceAndExpected("note");
+            XElement outElement = TBXHandlers.HandleNote(testingConstants.Item1);
             Assert.IsTrue(SerializedElementMatchesString(outElement, testingConstants.Item2));
         }
 

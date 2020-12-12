@@ -93,6 +93,15 @@ namespace TBXTools.Test {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;descrip type=&quot;Subject&quot;&gt;security services;European Commission&lt;/descrip&gt;.
+        /// </summary>
+        internal static string descrip {
+            get {
+                return ResourceManager.GetString("descrip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;languageGrp&gt;
         ///            &lt;language type=&quot;English&quot; lang=&quot;EN&quot; /&gt;
         ///            &lt;termGrp&gt;
@@ -110,6 +119,19 @@ namespace TBXTools.Test {
         internal static string langSec {
             get {
                 return ResourceManager.GetString("langSec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;descrip type=&quot;Note&quot;&gt;Another name for an open star cluster. They are often
+        ///                        termed Galactic Clusters because they are found mainly in the plane of our
+        ///                        galaxy. If you were to view our galaxy from afar, you would find that all
+        ///                        the open/galactic clusters lie within the spiral arms of the
+        ///                        galaxy.&lt;/descrip&gt;.
+        /// </summary>
+        internal static string note {
+            get {
+                return ResourceManager.GetString("note", resourceCulture);
             }
         }
         

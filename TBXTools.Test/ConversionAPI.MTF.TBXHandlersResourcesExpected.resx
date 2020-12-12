@@ -178,6 +178,9 @@
   <data name="date" xml:space="preserve">
     <value>&lt;date&gt;2009-05-05T00:00:00&lt;/date&gt;</value>
   </data>
+  <data name="descrip" xml:space="preserve">
+    <value>&lt;descrip type="Subject"&gt;security services;European Commission&lt;/descrip&gt;</value>
+  </data>
   <data name="langSec" xml:space="preserve">
     <value>&lt;languageGrp&gt;
             &lt;language type="English" lang="EN" /&gt;
@@ -196,6 +199,13 @@
                 &lt;/descripGrp&gt;
             &lt;/termGrp&gt;
         &lt;/languageGrp&gt;</value>
+  </data>
+  <data name="note" xml:space="preserve">
+    <value>&lt;descrip type="Note"&gt;Another name for an open star cluster. They are often
+                        termed Galactic Clusters because they are found mainly in the plane of our
+                        galaxy. If you were to view our galaxy from afar, you would find that all
+                        the open/galactic clusters lie within the spiral arms of the
+                        galaxy.&lt;/descrip&gt;</value>
   </data>
   <data name="term" xml:space="preserve">
     <value>&lt;term&gt;méthodologie prouvée&lt;/term&gt;</value>

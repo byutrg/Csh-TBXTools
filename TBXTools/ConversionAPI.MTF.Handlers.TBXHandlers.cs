@@ -72,6 +72,11 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                     outElement = HandleLangSec(currentElement);
                     break;
                 case "note":
+                    if (ShouldGroupifyTBXNote(currentElement))
+                    {
+                        GroupifyTBXElementInSourceXDocument(ref currentElement);
+                        outElement = HandleDescripGrp(currentElement);
+                    } else outElement = HandleNote(currentElement);
                     break;
                 case "p":
                     break;
@@ -142,6 +147,11 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
             return elt.Parent.Name != elt.Name + "Grp";
         }
 
+        public static bool ShouldGroupifyTBXNote(XElement elt)
+        {
+            return !elt.Parent.Name.LocalName.EndsWith("Grp");
+        }
+
         public static void GroupifyTBXElementInSourceXDocument(ref XElement elt)
         {
             XElement grpElt = new XElement(elt.Name + "Grp", new XElement(elt));
@@ -178,6 +188,21 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
             return new XElement("date", DateTime.Parse(elt.Value).ToString("yyyy-MM-ddT00:00:00"));
         }
 
+        public static XElement HandleDescrip(XElement elt)
+        {
+            string type = elt.Attribute("type").Value;
+            switch (type)
+            {
+                case "subjectField":
+                    type = "Subject";
+                    break;
+                default:
+                    break;
+            }
+
+            return new XElement("descrip", new XAttribute("type", type), elt.Value);
+        }
+
         public static XElement HandleDescripGrp(XElement elt)
         {
             XElement newElt = new XElement("descripGrp");
@@ -201,6 +226,11 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
             ParseChildNodes(elt, newElt);
             return newElt;
+        }
+
+        public static XElement HandleNote(XElement elt)
+        {
+            return new XElement("descrip", new XAttribute("type", "Note"), elt.Value);
         }
 
         public static XElement HandleTerm(XElement elt)
