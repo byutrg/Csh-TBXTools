@@ -93,11 +93,22 @@ namespace TBXTools.Test {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;descrip type=&quot;Subject&quot;&gt;security services;European Commission&lt;/descrip&gt;.
+        ///   Looks up a localized string similar to &lt;descrip type=&quot;Subject field&quot;&gt;security services;European Commission&lt;/descrip&gt;.
         /// </summary>
         internal static string descrip {
             get {
                 return ResourceManager.GetString("descrip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;descripGrp&gt;
+        ///&lt;descrip type=&quot;subjectField&quot;&gt;security services;European Commission&lt;/descrip&gt;
+        ///&lt;/descripGrp&gt;.
+        /// </summary>
+        internal static string descrip_toGroupify {
+            get {
+                return ResourceManager.GetString("descrip_toGroupify", resourceCulture);
             }
         }
         

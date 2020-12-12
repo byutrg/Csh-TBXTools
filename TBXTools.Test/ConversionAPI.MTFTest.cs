@@ -56,6 +56,15 @@ namespace TBXTools.Test
         }
 
         [TestMethod]
+        public void GroupifyTBXElementInSourceXDocument_ValidDescripInput_Test()
+        {
+            (XElement, string) testingConstants = GetResourceSourceAndExpected("descrip_toGroupify");
+            XElement eltToGroupify = testingConstants.Item1;
+            TBXHandlers.GroupifyTBXElementInSourceXDocument(ref eltToGroupify);
+            Assert.IsTrue(SerializedElementMatchesString(eltToGroupify, testingConstants.Item2));
+        }
+
+        [TestMethod]
         public void GroupifyTBXElementInSourceXDocument_ValidTransacInput_Test()
         {
             (XElement, string) testingConstants = GetResourceSourceAndExpected("transac_toGroupify");

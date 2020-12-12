@@ -47,6 +47,11 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                     outElement = HandleDate(currentElement);
                     break;
                 case "descrip":
+                    if (ShouldGroupifyTBXElement(currentElement))
+                    {
+                        GroupifyTBXElementInSourceXDocument(ref currentElement);
+                        outElement = HandleDescripGrp(currentElement);
+                    }
                     outElement = HandleDescrip(currentElement);
                     break;
                 case "descripGrp":
@@ -195,7 +200,7 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
             switch (type)
             {
                 case "subjectField":
-                    type = "Subject";
+                    type = "Subject field";
                     break;
                 default:
                     break;

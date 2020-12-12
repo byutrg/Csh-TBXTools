@@ -103,6 +103,15 @@ namespace TBXTools.Test {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;descrip type=&quot;subjectField&quot;&gt;security services;European Commission&lt;/descrip&gt;.
+        /// </summary>
+        internal static string descrip_toGroupify {
+            get {
+                return ResourceManager.GetString("descrip_toGroupify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;langSec xml:lang=&quot;EN&quot;&gt;
         ///					&lt;termSec&gt;
         ///						&lt;term&gt;interface&lt;/term&gt;

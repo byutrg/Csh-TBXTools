@@ -179,7 +179,12 @@
     <value>&lt;date&gt;2009-05-05T00:00:00&lt;/date&gt;</value>
   </data>
   <data name="descrip" xml:space="preserve">
-    <value>&lt;descrip type="Subject"&gt;security services;European Commission&lt;/descrip&gt;</value>
+    <value>&lt;descrip type="Subject field"&gt;security services;European Commission&lt;/descrip&gt;</value>
+  </data>
+  <data name="descrip_toGroupify" xml:space="preserve">
+    <value>&lt;descripGrp&gt;
+&lt;descrip type="subjectField"&gt;security services;European Commission&lt;/descrip&gt;
+&lt;/descripGrp&gt;</value>
   </data>
   <data name="langSec" xml:space="preserve">
     <value>&lt;languageGrp&gt;

@@ -183,6 +183,9 @@
   <data name="descrip" xml:space="preserve">
     <value>&lt;descrip type="subjectField"&gt;security services;European Commission&lt;/descrip&gt;</value>
   </data>
+  <data name="descrip_toGroupify" xml:space="preserve">
+    <value>&lt;descrip type="subjectField"&gt;security services;European Commission&lt;/descrip&gt;</value>
+  </data>
   <data name="langSec" xml:space="preserve">
     <value>&lt;langSec xml:lang="EN"&gt;
 					&lt;termSec&gt;
