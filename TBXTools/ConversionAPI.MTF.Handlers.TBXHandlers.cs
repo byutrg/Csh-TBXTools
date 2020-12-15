@@ -16,63 +16,79 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
             {
                 if (child.NodeType == XmlNodeType.Element)
                 {
-                    if (DescentParseElements(child as XElement, out XElement outChild)) outElement.Add(outChild);
+                    if (DescentParseElements(child as XElement, out XNode outChild)) outElement.Add(outChild);
                 }
                 else outElement.Add(child);
             }
         }
 
-        private static bool DescentParseElements(XElement currentElement, out XElement outElement)
+        private static bool DescentParseElements(XElement currentElement, out XNode outNode)
         {
-            outElement = null;
+            outNode = null;
             switch (currentElement.Name.LocalName)
             {
                 case "admin":
                     if (ShouldGroupifyTBXElement(currentElement))
                     {
                         GroupifyTBXElementInSourceXDocument(ref currentElement);
-                        outElement = HandleAdminGrp(currentElement);
+                        outNode = HandleAdminGrp(currentElement);
                     }
-                    else outElement = HandleAdmin(currentElement);
+                    else outNode = HandleAdmin(currentElement);
                     break;
                 case "adminGrp":
-                    outElement = HandleAdminGrp(currentElement);
+                    outNode = HandleAdminGrp(currentElement);
                     break;
                 case "adminNote":
+                    if (ShouldGroupifyTBXElement(currentElement))
+                    {
+                        GroupifyTBXElementInSourceXDocument(ref currentElement);
+                        outNode = HandleAdminGrp(currentElement);
+                    }
+                    else outNode = HandleAdminNote(currentElement);
                     break;
                 case "back":
                     break;
                 case "body":
-                    outElement = HandleBody(currentElement);
+                    outNode = HandleBody(currentElement);
                     break;
                 case "change":
                     break;
                 case "conceptEntry":
-                    outElement = HandleConceptEntry(currentElement);
+                    outNode = HandleConceptEntry(currentElement);
                     break;
                 case "date":
-                    outElement = HandleDate(currentElement);
+                    outNode = HandleDate(currentElement);
                     break;
                 case "descrip":
                     if (ShouldGroupifyTBXElement(currentElement))
                     {
                         GroupifyTBXElementInSourceXDocument(ref currentElement);
-                        outElement = HandleDescripGrp(currentElement);
-                    } else outElement = HandleDescrip(currentElement);
+                        outNode = HandleDescripGrp(currentElement);
+                    } else outNode = HandleDescrip(currentElement);
                     break;
                 case "descripGrp":
+                    outNode = HandleDescripGrp(currentElement);
                     break;
                 case "descripNote":
+                    if (ShouldGroupifyTBXElement(currentElement))
+                    {
+                        GroupifyTBXElementInSourceXDocument(ref currentElement);
+                        outNode = HandleDescripGrp(currentElement);
+                    }
+                    else outNode = HandleDescripNote(currentElement);
                     break;
                 case "ec":
+                    outNode = new XText(currentElement.Value);
                     break;
                 case "encodingDesc":
                     break;
                 case "fileDesc":
                     break;
                 case "foreign":
+                    outNode = new XText(currentElement.Value);
                     break;
                 case "hi":
+                    outNode = new XText(currentElement.Value);
                     break;
                 case "item":
                     break;
@@ -81,18 +97,19 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                 case "itemSet":
                     break;
                 case "langSec":
-                    outElement = HandleLangSec(currentElement);
+                    outNode = HandleLangSec(currentElement);
                     break;
                 case "note":
                     if (ShouldGroupifyTBXNote(currentElement))
                     {
                         GroupifyTBXElementInSourceXDocument(ref currentElement);
-                        outElement = HandleDescripGrp(currentElement);
-                    } else outElement = HandleNote(currentElement);
+                        outNode = HandleDescripGrp(currentElement);
+                    } else outNode = HandleNote(currentElement);
                     break;
                 case "p":
                     break;
                 case "ph":
+                    outNode = new XText(currentElement.Value);
                     break;
                 case "publicationStmt":
                     break;
@@ -105,6 +122,7 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                 case "revisionDesc":
                     break;
                 case "sc":
+                    outNode = new XText(currentElement.Value);
                     break;
                 case "sourceDesc":
                     break;
@@ -113,19 +131,20 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                 case "tbxHeader":
                     break;
                 case "term":
-                    outElement = HandleTerm(currentElement);
+                    outNode = HandleTerm(currentElement);
                     break;
                 case "termNote":
                     if (ShouldGroupifyTBXElement(currentElement))
                     {
                         GroupifyTBXElementInSourceXDocument(ref currentElement);
-                        outElement = HandleDescripGrp(currentElement);
-                    } else outElement = HandleTermNote(currentElement);
+                        outNode = HandleDescripGrp(currentElement);
+                    } else outNode = HandleTermNote(currentElement);
                     break;
                 case "termNoteGrp":
+                    outNode = HandleTermNoteGrp(currentElement);
                     break;
                 case "termSec":
-                    outElement = HandleTermSec(currentElement);
+                    outNode = HandleTermSec(currentElement);
                     break;
                 case "text":
                     break;
@@ -137,27 +156,33 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                     if (ShouldGroupifyTBXElement(currentElement))
                     {
                         GroupifyTBXElementInSourceXDocument(ref currentElement);
-                        outElement = HandleTransacGrp(currentElement);
-                    } else outElement = HandleTransac(currentElement);
+                        outNode = HandleTransacGrp(currentElement);
+                    } else outNode = HandleTransac(currentElement);
                     break;
                 case "transacGrp":
-                    outElement = HandleTransacGrp(currentElement);
+                    outNode = HandleTransacGrp(currentElement);
                     break;
                 case "transacNote":
+                    if (ShouldGroupifyTBXElement(currentElement))
+                    {
+                        GroupifyTBXElementInSourceXDocument(ref currentElement);
+                        outNode = HandleDescripGrp(currentElement);
+                    }
+                    else outNode = HandleTransacNote(currentElement);
                     break;
                 case "xref":
                     if (ShouldGroupifyTBXElement(currentElement))
                     {
                         GroupifyTBXElementInSourceXDocument(ref currentElement);
-                        outElement = HandleXrefGrp(currentElement);
+                        outNode = HandleXrefGrp(currentElement);
                     }
-                    else outElement = HandleXref(currentElement);
+                    else outNode = HandleXref(currentElement);
                     break;
                 default:
                     break;
             }
 
-            return outElement != null;
+            return outNode != null;
         }
 
         public static bool ShouldGroupifyTBXElement(XElement elt)
@@ -191,6 +216,12 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
             string type = elt.Attribute("type").Value;
             switch (type)
             {
+                case "customerSubset":
+                    type = "Customer";
+                    break;
+                case "projectSubset":
+                    type = "Project";
+                    break;
                 case "source":
                     type = "Source";
                     break;
@@ -198,12 +229,19 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                     break;
             }
 
-            return new XElement("descrip", new XAttribute("type", type), elt.Value);
+            XElement newElt = new XElement("descrip", new XAttribute("type", type));
+            ParseChildNodes(elt, newElt);
+            return newElt;
         }
 
         public static XElement HandleAdminGrp(XElement elt)
         {
-            XElement newElt = new XElement("descripGrp");
+            return HandleDescripGrp(elt);
+        }
+
+        public static XElement HandleAdminNote(XElement elt)
+        {
+            XElement newElt = new XElement("descrip");
             ParseChildNodes(elt, newElt);
             return newElt;
         }
@@ -233,6 +271,12 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
             string type = elt.Attribute("type").Value;
             switch (type)
             {
+                case "context":
+                    type = "Context";
+                    break;
+                case "definition":
+                    type = "Definition";
+                    break;
                 case "subjectField":
                     type = "Subject field";
                     break;
@@ -240,12 +284,21 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                     break;
             }
 
-            return new XElement("descrip", new XAttribute("type", type), elt.Value);
+            XElement newElt = new XElement("descrip", new XAttribute("type", type));
+            ParseChildNodes(elt, newElt);
+            return newElt;
         }
 
         public static XElement HandleDescripGrp(XElement elt)
         {
             XElement newElt = new XElement("descripGrp");
+            ParseChildNodes(elt, newElt);
+            return newElt;
+        }
+
+        public static XElement HandleDescripNote(XElement elt)
+        {
+            XElement newElt = new XElement("descrip", new XAttribute("type", elt.Attribute("type")));
             ParseChildNodes(elt, newElt);
             return newElt;
         }
@@ -270,12 +323,16 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
         public static XElement HandleNote(XElement elt)
         {
-            return new XElement("descrip", new XAttribute("type", "Note"), elt.Value);
+            XElement newElt = new XElement("descrip", new XAttribute("type", "Note"));
+            ParseChildNodes(elt, newElt);
+            return newElt;
         }
 
         public static XElement HandleTerm(XElement elt)
         {
-            return new XElement("term", elt.Value);
+            XElement newElt = new XElement("term");
+            ParseChildNodes(elt, newElt);
+            return newElt;
         }
 
         public static XElement HandleTermNote(XElement elt)
@@ -304,8 +361,91 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                             break;
                     }
                     break;
+                case "grammaticalGender":
+                    type = "Gender";
+                    switch (value)
+                    {
+                        case "masculine":
+                        case "feminine":
+                        case "neuter":
+                        case "other":
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
                 case "partOfSpeech":
                     type = "Part of Speech";
+                    switch(value)
+                    {
+                        case "adjective":
+                        case "noun":
+                        case "other":
+                        case "verb":
+                        case "adverb":
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case "termLocation":
+                    type = "Term location";
+                    switch(value)
+                    {
+                        case "checkBox":
+                            value = "check box";
+                            break;
+                        case "comboBox":
+                            value = "combo box";
+                            break;
+                        case "comboBoxElement":
+                            value = "combo box element";
+                            break;
+                        case "dialogBox":
+                            value = "dialogue box";
+                            break;
+                        case "groupBox":
+                            value = "group box";
+                            break;
+                        case "informativeMessage":
+                            value = "informative message";
+                            break;
+                        case "interactiveMessage":
+                            value = "interactive message";
+                            break;
+                        case "menuItem":
+                            value = "menu item";
+                            break;
+                        case "progressBar":
+                            value = "progress bar";
+                            break;
+                        case "pushButton":
+                            value = "push button";
+                            break;
+                        case "radioButton":
+                            value = "radio button";
+                            break;
+                        case "slider":
+                            break;
+                        case "spinBox":
+                            value = "spin box";
+                            break;
+                        case "tab":
+                            break;
+                        case "tableText":
+                            value = "table text";
+                            break;
+                        case "textBox":
+                            value = "text box";
+                            break;
+                        case "toolTip":
+                            value = "tool tip";
+                            break;
+                        case "user-definedType":
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case "termType":
                     type = "Term type";
@@ -317,6 +457,10 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                         case "shortForm":
                             value = "short form";
                             break;
+                        case "acronym":
+                        case "abbreviation":
+                        case "variant":
+                        case "phrase":
                         default:
                             break;
                     }
@@ -325,7 +469,15 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                     break;
             }
 
-            return new XElement("descrip", new XAttribute("type", type), value);
+            elt.Value = value;
+            XElement newElt = new XElement("descrip", new XAttribute("type", type));
+            ParseChildNodes(elt, newElt);
+            return newElt;
+        }
+
+        public static XElement HandleTermNoteGrp(XElement elt)
+        {
+            return HandleDescripGrp(elt);
         }
 
         public static XElement HandleTermSec(XElement elt)
@@ -362,7 +514,15 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                     break;
             }
 
-            return new XElement("transac", new XAttribute("type", type), value);
+            XElement newElt = new XElement("transac", new XAttribute("type", type), value);
+            return newElt;
+        }
+
+        public static XElement HandleTransacNote(XElement elt)
+        {
+            XElement newElt = new XElement("descrip", elt.Attribute("type"));
+            ParseChildNodes(elt, newElt);
+            return newElt;
         }
 
         public static XElement HandleXref(XElement elt)
@@ -377,7 +537,9 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                     break;
             }
 
-            return new XElement("descrip", new XAttribute("type", type), elt.Value);
+            XElement newElt = new XElement("descrip", new XAttribute("type", type));
+            ParseChildNodes(elt, newElt);
+            return newElt;
         }
 
         private static XElement HandleXrefTargetAttributeAsAdmin(XElement elt)
