@@ -10,7 +10,7 @@ namespace TBXTools.Test
 {
     public static class ExtensionMethods
     {
-        public static string RemoveDuplicateWhitespace(this String str)
+        public static string RemoveGeminateWhitespaceAndNewlines(this String str)
         {
             return Regex.Replace(str, @"\s+", " ");
         }
@@ -19,7 +19,7 @@ namespace TBXTools.Test
     [TestClass]
     public class TBXHandlersTest
     {
-        
+
 
         private (XElement, string) GetResourceSourceAndExpected(string key)
         {
@@ -33,8 +33,32 @@ namespace TBXTools.Test
 
         private bool SerializedElementMatchesString(XElement xElement, string expected)
         {
-            string xElementStr = xElement.ToString().RemoveDuplicateWhitespace();
+            string xElementStr = xElement.ToString().RemoveGeminateWhitespaceAndNewlines();
             return xElementStr.Equals(Regex.Replace(expected, @"\s+", " "));
+        }
+
+        [TestMethod]
+        public void Internal_RemoveGeminateWhitespaceAndNewlines_Valid_Test()
+        {
+            string source = "This \r \r\n is   a test\n";
+            string expected = "This is a test ";
+            Assert.AreEqual(source.RemoveGeminateWhitespaceAndNewlines(), expected);
+        }
+
+        [TestMethod]
+        public void Internal_SerializedElementMatchesString_Valid_Test()
+        {
+            XElement source = new XElement("test", "hello");
+            string expected = @"<test>hello</test>";
+            Assert.IsTrue(SerializedElementMatchesString(source, expected));
+        }
+
+        [TestMethod]
+        public void Internal_SerializedElementMatchesString_Invalid_Test()
+        {
+            XElement source = new XElement("test", "world");
+            string expected = @"<test>hello</test>";
+            Assert.IsFalse(SerializedElementMatchesString(source, expected));
         }
 
         [TestMethod]
@@ -50,9 +74,18 @@ namespace TBXTools.Test
             {
                 string mtfOuput = outputReader.ReadToEnd();
                 Assert.AreEqual(
-                    TestFiles.MTF_Valid.RemoveDuplicateWhitespace(), 
-                    mtfOuput.RemoveDuplicateWhitespace());
+                    TestFiles.MTF_Valid.RemoveGeminateWhitespaceAndNewlines(),
+                    mtfOuput.RemoveGeminateWhitespaceAndNewlines());
             }
+        }
+
+        [TestMethod]
+        public void GroupifyTBXElementInSourceXDocument_ValidAdminInput_Test()
+        {
+            (XElement, string) testingConstants = GetResourceSourceAndExpected("admin_toGroupify");
+            XElement eltToGroupify = testingConstants.Item1;
+            TBXHandlers.GroupifyTBXElementInSourceXDocument(ref eltToGroupify);
+            Assert.IsTrue(SerializedElementMatchesString(eltToGroupify, testingConstants.Item2));
         }
 
         [TestMethod]
@@ -80,6 +113,31 @@ namespace TBXTools.Test
             XElement eltToGroupify = testingConstants.Item1;
             TBXHandlers.GroupifyTBXElementInSourceXDocument(ref eltToGroupify);
             Assert.IsTrue(SerializedElementMatchesString(eltToGroupify, testingConstants.Item2));
+        }
+
+        [TestMethod]
+        public void GroupifyTBXElementInSourceXDocument_ValidXrefInput_Test()
+        {
+            (XElement, string) testingConstants = GetResourceSourceAndExpected("xref_toGroupify");
+            XElement eltToGroupify = testingConstants.Item1;
+            TBXHandlers.GroupifyTBXElementInSourceXDocument(ref eltToGroupify);
+            Assert.IsTrue(SerializedElementMatchesString(eltToGroupify, testingConstants.Item2));
+        }
+
+        [TestMethod]
+        public void HandleXrefGrp_MockedXrefGrp_Test()
+        {
+            (XElement, string) testingConstants = GetResourceSourceAndExpected("xref_parsed");
+            XElement outElement = TBXHandlers.HandleXrefGrp(testingConstants.Item1);
+            Assert.IsTrue(SerializedElementMatchesString(outElement, testingConstants.Item2));
+        }
+
+        [TestMethod]
+        public void HandleAdmin_ValidInput_Test()
+        {
+            (XElement, string) testingConstants = GetResourceSourceAndExpected("admin");
+            XElement outElement = TBXHandlers.HandleAdmin(testingConstants.Item1);
+            Assert.IsTrue(SerializedElementMatchesString(outElement, testingConstants.Item2));
         }
 
         [TestMethod]
@@ -150,6 +208,14 @@ namespace TBXTools.Test
         {
             (XElement, string) testingConstants = GetResourceSourceAndExpected("transacGrp");
             XElement outElement = TBXHandlers.HandleTransacGrp(testingConstants.Item1);
+            Assert.IsTrue(SerializedElementMatchesString(outElement, testingConstants.Item2));
+        }
+
+        [TestMethod]
+        public void HandleXref_ValidInput_Test()
+        {
+            (XElement, string) testingConstants = GetResourceSourceAndExpected("xref");
+            XElement outElement = TBXHandlers.HandleXref(testingConstants.Item1);
             Assert.IsTrue(SerializedElementMatchesString(outElement, testingConstants.Item2));
         }
     }

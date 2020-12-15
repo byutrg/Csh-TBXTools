@@ -28,8 +28,15 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
             switch (currentElement.Name.LocalName)
             {
                 case "admin":
+                    if (ShouldGroupifyTBXElement(currentElement))
+                    {
+                        GroupifyTBXElementInSourceXDocument(ref currentElement);
+                        outElement = HandleAdminGrp(currentElement);
+                    }
+                    else outElement = HandleAdmin(currentElement);
                     break;
                 case "adminGrp":
+                    outElement = HandleAdminGrp(currentElement);
                     break;
                 case "adminNote":
                     break;
@@ -51,8 +58,7 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                     {
                         GroupifyTBXElementInSourceXDocument(ref currentElement);
                         outElement = HandleDescripGrp(currentElement);
-                    }
-                    outElement = HandleDescrip(currentElement);
+                    } else outElement = HandleDescrip(currentElement);
                     break;
                 case "descripGrp":
                     break;
@@ -140,6 +146,12 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                 case "transacNote":
                     break;
                 case "xref":
+                    if (ShouldGroupifyTBXElement(currentElement))
+                    {
+                        GroupifyTBXElementInSourceXDocument(ref currentElement);
+                        outElement = HandleXrefGrp(currentElement);
+                    }
+                    else outElement = HandleXref(currentElement);
                     break;
                 default:
                     break;
@@ -172,6 +184,28 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
             elt.Elements().Remove();
             elt.Add(newlySortedChildren);
+        }
+
+        public static XElement HandleAdmin(XElement elt)
+        {
+            string type = elt.Attribute("type").Value;
+            switch (type)
+            {
+                case "source":
+                    type = "Source";
+                    break;
+                default:
+                    break;
+            }
+
+            return new XElement("descrip", new XAttribute("type", type), elt.Value);
+        }
+
+        public static XElement HandleAdminGrp(XElement elt)
+        {
+            XElement newElt = new XElement("descripGrp");
+            ParseChildNodes(elt, newElt);
+            return newElt;
         }
 
         public static XElement HandleBody(XElement elt)
@@ -247,16 +281,51 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
         public static XElement HandleTermNote(XElement elt)
         {
             string type = elt.Attribute("type").Value;
+            string value = elt.Value;
             switch (type)
             {
+                case "administrativeStatus":
+                    type = "Usage status";
+                    switch(value)
+                    {
+                        case "admittedTerm-admn-sts":
+                            value = "admitted";
+                            break;
+                        case "preferredTerm-admn-sts":
+                            value = "preferred";
+                            break; 
+                        case "deprecatedTerm-admn-sts":
+                            value = "not recommended";
+                            break;
+                        case "supersededTerm-admn-sts":
+                            value = "obsolete";
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
                 case "partOfSpeech":
                     type = "Part of Speech";
+                    break;
+                case "termType":
+                    type = "Term type";
+                    switch(value)
+                    {
+                        case "fullForm":
+                            value = "full form";
+                            break;
+                        case "shortForm":
+                            value = "short form";
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 default:
                     break;
             }
 
-            return new XElement("descrip", new XAttribute("type", type), elt.Value);
+            return new XElement("descrip", new XAttribute("type", type), value);
         }
 
         public static XElement HandleTermSec(XElement elt)
@@ -294,6 +363,49 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
             }
 
             return new XElement("transac", new XAttribute("type", type), value);
+        }
+
+        public static XElement HandleXref(XElement elt)
+        {
+            string type = elt.Attribute("type")?.Value;
+            switch(type)
+            {
+                case "xGraphic":
+                    type = "Image";
+                    break;
+                default:
+                    break;
+            }
+
+            return new XElement("descrip", new XAttribute("type", type), elt.Value);
+        }
+
+        private static XElement HandleXrefTargetAttributeAsAdmin(XElement elt)
+        {
+            XElement newElt = null;
+            string target = elt.Attribute("target")?.Value;
+            if (!string.IsNullOrWhiteSpace(target))
+            {
+                newElt = new XElement(elt.Name.Namespace + "adminGrp",
+                    new XElement(elt.Name.Namespace + "admin", new XAttribute("type", "source"), target)
+                    );
+            }
+
+            return HandleAdminGrp(newElt);
+        }
+
+        /// <summary>
+        /// Although there is no such element as &lt;xrefGrp&gt;, this handler is here to handle a "groupified"
+        /// xref.
+        /// </summary>
+        /// <param name="elt">A "groupified" xref, aka &lt;xrefGrp&gt;</param>
+        /// <returns>Fully parsed MTF equivalent of xref.</returns>
+        public static XElement HandleXrefGrp(XElement elt)
+        {
+            XElement newElt = HandleDescripGrp(elt);
+            XElement xrefTarget = HandleXrefTargetAttributeAsAdmin(elt.Element(elt.Name.Namespace + "xref"));
+            newElt.Add(xrefTarget);
+            return newElt;
         }
     }
 }

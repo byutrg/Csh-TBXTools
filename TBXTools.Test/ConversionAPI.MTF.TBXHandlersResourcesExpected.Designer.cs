@@ -61,6 +61,26 @@ namespace TBXTools.Test {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;descrip type=&quot;Source&quot;&gt;source&lt;/descrip&gt;.
+        /// </summary>
+        internal static string admin {
+            get {
+                return ResourceManager.GetString("admin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;adminGrp&gt;
+        ///&lt;admin type=&quot;source&quot;&gt;source&lt;/admin&gt;
+        ///&lt;/adminGrp&gt;.
+        /// </summary>
+        internal static string admin_toGroupify {
+            get {
+                return ResourceManager.GetString("admin_toGroupify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;conceptGrp&gt;
         ///        &lt;concept&gt;1&lt;/concept&gt;
         ///        &lt;transacGrp&gt;
@@ -216,6 +236,40 @@ namespace TBXTools.Test {
         internal static string transacGrp {
             get {
                 return ResourceManager.GetString("transacGrp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;descrip type=&quot;Image&quot;&gt;Fake test image&lt;/descrip&gt;.
+        /// </summary>
+        internal static string xref {
+            get {
+                return ResourceManager.GetString("xref", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;descripGrp&gt;
+        ///&lt;descrip type=&quot;Image&quot;&gt;Fake test image&lt;/descrip&gt;
+        ///&lt;descripGrp&gt;
+        ///&lt;descrip type=&quot;Source&quot;&gt;https://www.google.com/image.png&lt;/descrip&gt;
+        ///&lt;/descripGrp&gt;
+        ///&lt;/descripGrp&gt;.
+        /// </summary>
+        internal static string xref_parsed {
+            get {
+                return ResourceManager.GetString("xref_parsed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;xrefGrp&gt;
+        ///&lt;xref type=&quot;xGraphic&quot; target=&quot;https://www.google.com/image.png&quot;&gt;Fake test image&lt;/xref&gt;
+        ///&lt;/xrefGrp&gt;.
+        /// </summary>
+        internal static string xref_toGroupify {
+            get {
+                return ResourceManager.GetString("xref_toGroupify", resourceCulture);
             }
         }
     }

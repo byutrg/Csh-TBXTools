@@ -117,6 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="admin" xml:space="preserve">
+    <value>&lt;descrip type="Source"&gt;source&lt;/descrip&gt;</value>
+  </data>
+  <data name="admin_toGroupify" xml:space="preserve">
+    <value>&lt;adminGrp&gt;
+&lt;admin type="source"&gt;source&lt;/admin&gt;
+&lt;/adminGrp&gt;</value>
+  </data>
   <data name="conceptEntry" xml:space="preserve">
     <value>&lt;conceptGrp&gt;
         &lt;concept&gt;1&lt;/concept&gt;
@@ -250,5 +258,21 @@
     <value>&lt;transacGrp&gt;
 					&lt;transac type="transactionType"&gt;origination&lt;/transac&gt;
 			&lt;/transacGrp&gt;</value>
+  </data>
+  <data name="xref" xml:space="preserve">
+    <value>&lt;descrip type="Image"&gt;Fake test image&lt;/descrip&gt;</value>
+  </data>
+  <data name="xref_parsed" xml:space="preserve">
+    <value>&lt;descripGrp&gt;
+&lt;descrip type="Image"&gt;Fake test image&lt;/descrip&gt;
+&lt;descripGrp&gt;
+&lt;descrip type="Source"&gt;https://www.google.com/image.png&lt;/descrip&gt;
+&lt;/descripGrp&gt;
+&lt;/descripGrp&gt;</value>
+  </data>
+  <data name="xref_toGroupify" xml:space="preserve">
+    <value>&lt;xrefGrp&gt;
+&lt;xref type="xGraphic" target="https://www.google.com/image.png"&gt;Fake test image&lt;/xref&gt;
+&lt;/xrefGrp&gt;</value>
   </data>
 </root>
