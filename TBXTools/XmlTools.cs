@@ -17,7 +17,7 @@ namespace TBXTools
         {
             if (elt.Parent == null) return $"/{elt.Name.LocalName}";
 
-            int index = elt.Parent.Elements().ToList().IndexOf(elt) + 1;
+            int index = elt.Parent.Elements(elt.Name).ToList().IndexOf(elt) + 1;
             return $@"{GetNodeLocation(elt.Parent)}/{elt.Name.LocalName}[{index}]";
         } 
     }
