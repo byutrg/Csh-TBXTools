@@ -78,17 +78,17 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                     else outNode = HandleDescripNote(currentElement);
                     break;
                 case "ec":
-                    outNode = new XText(currentElement.Value);
+                    outNode = HandleText(currentElement);
                     break;
                 case "encodingDesc":
                     break;
                 case "fileDesc":
                     break;
                 case "foreign":
-                    outNode = new XText(currentElement.Value);
+                    outNode = HandleText(currentElement);
                     break;
                 case "hi":
-                    outNode = new XText(currentElement.Value);
+                    outNode = HandleText(currentElement);
                     break;
                 case "item":
                     break;
@@ -109,7 +109,7 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                 case "p":
                     break;
                 case "ph":
-                    outNode = new XText(currentElement.Value);
+                    outNode = HandleText(currentElement);
                     break;
                 case "publicationStmt":
                     break;
@@ -122,7 +122,7 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                 case "revisionDesc":
                     break;
                 case "sc":
-                    outNode = new XText(currentElement.Value);
+                    outNode = HandleText(currentElement);
                     break;
                 case "sourceDesc":
                     break;
@@ -198,6 +198,8 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
         public static void GroupifyTBXElementInSourceXDocument(ref XElement elt)
         {
             XElement grpElt = new XElement(elt.Name + "Grp", new XElement(elt));
+            LoggingManager.OutputInfo($"Groupifying {XmlTools.GetNodeLocation(elt)}.");
+            LoggingManager.OutputVerbose($"Element: {elt}");
             elt = grpElt;
         }
 
@@ -211,8 +213,18 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
             elt.Add(newlySortedChildren);
         }
 
+        public static XText HandleText(XElement elt)
+        {
+            LoggingManager.OutputInfo($"Handling as text: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+            return new XText(elt.Value);
+        }
+
         public static XElement HandleAdmin(XElement elt)
         {
+            LoggingManager.OutputInfo($"Converting to <admin>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
             string type = elt.Attribute("type").Value;
             switch (type)
             {
@@ -241,6 +253,9 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
         public static XElement HandleAdminNote(XElement elt)
         {
+            LoggingManager.OutputInfo($"Converting to <descrip>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
             XElement newElt = new XElement("descrip");
             ParseChildNodes(elt, newElt);
             return newElt;
@@ -248,6 +263,9 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
         public static XElement HandleBody(XElement elt)
         {
+            LoggingManager.OutputInfo($"Converting to <mtf>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
             XElement newElt = new XElement("mtf");
             ParseChildNodes(elt, newElt);
             return newElt;
@@ -255,6 +273,10 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
         public static XElement HandleConceptEntry(XElement elt)
         {
+            LoggingManager.OutputInfo($"Converting to <conceptGrp>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
+
             int id = elt.ElementsBeforeSelf(elt.Name).Count() + 1;
             XElement newElt = new XElement("conceptGrp", new XElement("concept", id));
             ParseChildNodes(elt, newElt);
@@ -263,11 +285,19 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
         public static XElement HandleDate(XElement elt)
         {
+            LoggingManager.OutputInfo($"Converting to <date>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
+
             return new XElement("date", DateTime.Parse(elt.Value).ToString("yyyy-MM-ddT00:00:00"));
         }
 
         public static XElement HandleDescrip(XElement elt)
         {
+            LoggingManager.OutputInfo($"Converting to <descrip>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
+
             string type = elt.Attribute("type").Value;
             switch (type)
             {
@@ -291,6 +321,9 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
         public static XElement HandleDescripGrp(XElement elt)
         {
+            LoggingManager.OutputInfo($"Converting to <descripGrp>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
             XElement newElt = new XElement("descripGrp");
             ParseChildNodes(elt, newElt);
             return newElt;
@@ -298,6 +331,10 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
         public static XElement HandleDescripNote(XElement elt)
         {
+            LoggingManager.OutputInfo($"Converting to <descrip>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
+
             XElement newElt = new XElement("descrip", new XAttribute("type", elt.Attribute("type")));
             ParseChildNodes(elt, newElt);
             return newElt;
@@ -305,6 +342,10 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
         public static XElement HandleLangSec(XElement elt)
         {
+            LoggingManager.OutputInfo($"Converting to <languageGrp>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
+
             string langCode = elt.Attribute(XNamespace.Xml + "lang")?.Value;
             string langName = null;
             if (!string.IsNullOrWhiteSpace(langCode))
@@ -323,6 +364,10 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
         public static XElement HandleNote(XElement elt)
         {
+            LoggingManager.OutputInfo($"Converting to <descrip>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
+
             XElement newElt = new XElement("descrip", new XAttribute("type", "Note"));
             ParseChildNodes(elt, newElt);
             return newElt;
@@ -330,6 +375,9 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
         public static XElement HandleTerm(XElement elt)
         {
+            LoggingManager.OutputInfo($"Converting to <term>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
             XElement newElt = new XElement("term");
             ParseChildNodes(elt, newElt);
             return newElt;
@@ -337,6 +385,9 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
         public static XElement HandleTermNote(XElement elt)
         {
+            LoggingManager.OutputInfo($"Converting to <descrip>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
             string type = elt.Attribute("type").Value;
             string value = elt.Value;
             switch (type)
@@ -477,11 +528,19 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
         public static XElement HandleTermNoteGrp(XElement elt)
         {
-            return HandleDescripGrp(elt);
+            LoggingManager.OutputInfo($"Converting to <descripGrp>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
+            XElement newElt = new XElement("descripGrp");
+            ParseChildNodes(elt, newElt);
+            return newElt;
         }
 
         public static XElement HandleTermSec(XElement elt)
         {
+            LoggingManager.OutputInfo($"Converting to <termGrp>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
             XElement newElt = new XElement("termGrp");
             ParseChildNodes(elt, newElt);
             OrderTermSecChildren(newElt);
@@ -490,6 +549,9 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
         public static XElement HandleTransacGrp(XElement elt)
         {
+            LoggingManager.OutputInfo($"Converting to <transacGrp>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
             XElement newElt = new XElement("transacGrp");
             ParseChildNodes(elt, newElt);
             return newElt;
@@ -497,6 +559,9 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
         public static XElement HandleTransac(XElement elt)
         {
+            LoggingManager.OutputInfo($"Converting to <transac>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
             string type = elt.Attribute("type")?.Value;
             string value = elt.Value;
             switch (type)
@@ -520,6 +585,9 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
         public static XElement HandleTransacNote(XElement elt)
         {
+            LoggingManager.OutputInfo($"Converting to <descrip>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
             XElement newElt = new XElement("descrip", elt.Attribute("type"));
             ParseChildNodes(elt, newElt);
             return newElt;
@@ -527,6 +595,9 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
         public static XElement HandleXref(XElement elt)
         {
+            LoggingManager.OutputInfo($"Converting to <descrip>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
             string type = elt.Attribute("type")?.Value;
             switch(type)
             {
@@ -544,6 +615,8 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
 
         private static XElement HandleXrefTargetAttributeAsAdmin(XElement elt)
         {
+            LoggingManager.OutputInfo($"Separating @target of {elt.Name.LocalName} to its own <admin type=\"source\">");
+
             XElement newElt = null;
             string target = elt.Attribute("target")?.Value;
             if (!string.IsNullOrWhiteSpace(target))
@@ -564,7 +637,12 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
         /// <returns>Fully parsed MTF equivalent of xref.</returns>
         public static XElement HandleXrefGrp(XElement elt)
         {
-            XElement newElt = HandleDescripGrp(elt);
+            LoggingManager.OutputInfo($"Converting to <descripGrp>: {XmlTools.GetNodeLocation(elt)}");
+            LoggingManager.OutputVerbose($"Element: {elt}");
+
+            XElement newElt = new XElement("descripGrp");
+            ParseChildNodes(elt, newElt);
+            
             XElement xrefTarget = HandleXrefTargetAttributeAsAdmin(elt.Element(elt.Name.Namespace + "xref"));
             newElt.Add(xrefTarget);
             return newElt;

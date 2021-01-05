@@ -22,8 +22,9 @@ namespace TBXTools.ConversionAPI.MTF
                 XDocument mtfDoc = new XDocument(TBXHandlers.HandleBody(body));
                 mtfDoc.Save(outputFile);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                LoggingManager.Output(e.Message);
                 return false;
             }
 

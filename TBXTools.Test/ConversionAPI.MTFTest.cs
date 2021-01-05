@@ -133,6 +133,15 @@ namespace TBXTools.Test
         }
 
         [TestMethod]
+        public void HandleText_ValidInput_Test()
+        {
+            XElement context = new XElement("test", "hello world");
+            string expected = "hello world";
+
+            Assert.AreEqual(TBXHandlers.HandleText(context).Value, expected);
+        }
+
+        [TestMethod]
         public void HandleAdmin_ValidInput_Test()
         {
             (XElement, string) testingConstants = GetResourceSourceAndExpected("admin");
