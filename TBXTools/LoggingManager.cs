@@ -17,7 +17,7 @@ namespace TBXTools
             Verbose
         }
 
-        public static LoggingLevels LoggingLevel { get; private set; } = LoggingLevels.Info;
+        public static LoggingLevels LoggingLevel { get; private set; } = LoggingLevels.None;
 
         private static OutputFunc output = (message, args) => { if (LoggingLevel > LoggingLevels.None) Console.WriteLine(message); };
         private static OutputFunc outputError = (message, args) => { if (LoggingLevel >= LoggingLevels.ErrorsOnly) Output(message, args); };
