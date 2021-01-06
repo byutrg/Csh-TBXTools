@@ -18,8 +18,8 @@ namespace TBXTools.ConversionAPI.MTF
             try
             {
                 XDocument tbxDoc = XDocument.Load(tbxFile);
-                XElement body = tbxDoc.Descendants(ValidationAPI.Namespace + "body")?.First();
-                if (body == null) body = tbxDoc.Descendants("body")?.First();
+                XElement body = tbxDoc.Descendants(ValidationAPI.Namespace + "body")?.FirstOrDefault();
+                if (body == null) body = tbxDoc.Descendants("body")?.FirstOrDefault();
                 XDocument mtfDoc = new XDocument(TBXHandlers.HandleBody(body));
                 mtfDoc.Save(outputFile);
             }
