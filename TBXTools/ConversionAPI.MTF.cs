@@ -18,7 +18,7 @@ namespace TBXTools.ConversionAPI.MTF
             try
             {
                 XDocument tbxDoc = XDocument.Load(tbxFile);
-                XElement body = tbxDoc.Descendants(TBXTools.ValidationAPI.Namespace + "body").First();
+                XElement body = tbxDoc.Descendants(ValidationAPI.Namespace + "body").First();
                 XDocument mtfDoc = new XDocument(TBXHandlers.HandleBody(body));
                 mtfDoc.Save(outputFile);
             }
@@ -30,7 +30,5 @@ namespace TBXTools.ConversionAPI.MTF
 
             return true;
         }
-
-        
     }
 }
