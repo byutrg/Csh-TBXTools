@@ -54,6 +54,7 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                 case "change":
                     break;
                 case "conceptEntry":
+                case "termEntry":
                     outNode = HandleConceptEntry(currentElement);
                     break;
                 case "date":
@@ -97,6 +98,7 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                 case "itemSet":
                     break;
                 case "langSec":
+                case "langSet":
                     outNode = HandleLangSec(currentElement);
                     break;
                 case "note":
@@ -144,6 +146,7 @@ namespace TBXTools.ConversionAPI.MTF.Handlers
                     outNode = HandleTermNoteGrp(currentElement);
                     break;
                 case "termSec":
+                case "tig":
                     outNode = HandleTermSec(currentElement);
                     break;
                 case "text":
